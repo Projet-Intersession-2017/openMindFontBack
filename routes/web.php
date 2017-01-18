@@ -26,3 +26,14 @@ Route::get('/groupe', function () {
     return view('groupe');
 });
 
+Auth::routes();
+
+Route::group(['prefix' => 'intra', 'middleware' => 'admin'], function()
+{
+  // Backpack\CRUD: Define the resources for the entities you want to CRUD.
+    CRUD::resource('user', 'Admin\UserCrudController');
+    CRUD::resource('role', 'Admin\RoleCrudController');
+    CRUD::resource('group', 'Admin\GroupCrudController');
+  
+  // [...] other routes
+});
