@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('user/{user}', [
+    'middleware' => ['auth', 'roles'], // A 'roles' middleware must be specified
+    'uses' => 'UserController@index',
+    'roles' => ['administrator', 'manager'] // Only an administrator, or a manager can access this route
+]);
