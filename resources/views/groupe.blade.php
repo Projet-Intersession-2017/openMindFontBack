@@ -29,16 +29,27 @@
 		<div class="row">
 			<div class="col-sm-12 col-md-12">
 				<h2>Liste des groupes</h2>
+				<button class="btn btn-primary creer" ><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button><br>
 				<table class="table">
-				<th>
-				<td>Nom du groupe</td>
-				<td>Modifier</td>
-				<td>Supprimer</td>
-				</th>
+				<tr>
+					<th>Nom du groupe</th>
+					<th>Modifier</th>
+					<th>Supprimer</th>
+				</tr>
 				<tr>
 					<td>Goupe 1</td>
-					<td><button class="modifier" onclick="modalModifGroupe(this)" >Modifier</button></td>
-					<td><button class="supprimer" >Supprimer</button></td>
+					<td><button class="btn btn-primary modifier" onclick="modalModifGroupe(this)" >Modifier</button></td>
+					<td><button class="btn btn-primary supprimer" >Supprimer</button></td>
+				</tr>
+				<tr>
+					<td>Goupe 2</td>
+					<td><button class="btn btn-primary modifier" onclick="modalModifGroupe(this)" >Modifier</button></td>
+					<td><button class="btn btn-primary supprimer" >Supprimer</button></td>
+				</tr>
+				<tr>
+					<td>Goupe 3</td>
+					<td><button class="btn btn-primary modifier" onclick="modalModifGroupe(this)" >Modifier</button></td>
+					<td><button class="btn btn-primary supprimer" >Supprimer</button></td>
 				</tr>
 				</table>
 			</div>
@@ -47,7 +58,7 @@
 		  <div class="modal-dialog" role="document">
 			<div class="modal-content">
 			  <div class="modal-header">
-				<h5 class="modal-title">Modal title</h5>
+				<h5 class="modal-title">Groupe</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				  <span aria-hidden="true">&times;</span>
 				</button>
@@ -55,11 +66,10 @@
 			  <div class="modal-body">
 				<label>Nom du groupe : </label>
 				<input type="text" id="nomGroupe" />
-				<input type="button" value="Valider" />
 			  </div>
 			  <div class="modal-footer">
-				<button type="button" class="btn btn-primary">Valider</button>
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+				<button type="button" class="btn btn-primary">Valider</button>
 			  </div>
 			</div>
 		  </div>

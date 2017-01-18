@@ -1,7 +1,9 @@
 $( document ).ready(function() {
+	$( ".supprimer" ).click(function() {
+	 $(this).closest('tr').remove();
+	});
 });
 
 function modalModifGroupe(obj){
-	alert('ok');
-	//$('.modalGroupe').modal('show');
+	$('.modalGroupe').modal('show');
 }

@@ -1,0 +1,20 @@
+h3{
+	color:blue;
+}
+.blocMentoring{
+	background-color : #50588a;
+}
+.paragrapheColor{
+	color : white;
+	font-family: sans-serif;
+}
+p{
+	color:black;
+}
+.blocConfiance{
+	background-color: #f2f2f2;
+	height: 200px;
+}
+.elementConfiance{
+	margin:0 auto;
+}
