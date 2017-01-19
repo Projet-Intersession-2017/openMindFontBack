@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
 
-class Role extends Model
+class Choice extends Model
 {
     use CrudTrait;
 
@@ -15,7 +15,7 @@ class Role extends Model
 	|--------------------------------------------------------------------------
 	*/
 
-    protected $table = 'role';
+    protected $table = 'choice';
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
@@ -35,13 +35,6 @@ class Role extends Model
 	|--------------------------------------------------------------------------
 	*/
 
-    /**
-     * The users that belong to the role.
-     */
-    public function users()
-    {
-        return $this->hasMany('App\User');
-    }
     /*
 	|--------------------------------------------------------------------------
 	| SCOPES

@@ -19,7 +19,8 @@ class User extends Model
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    // protected $fillable = [];
+    // protected $guarded = ['id', 'remember_token'];
+    protected $fillable = ['name', 'email', 'password', 'role_id', 'group_id', 'coordinate_id', 'spam', 'coordonate'];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -37,9 +38,36 @@ class User extends Model
 
 
 
-    public function roles()
+    /**
+     * The roles that belong to the user.
+     */
+    public function role()
     {
-        return $this->hasMany('App\Roles', 'role_id', 'id');
+        return $this->belongsTo('App\Role');
+    }
+
+
+    /**
+     * The users that belong to the role.
+     */
+    public function coordonate()
+    {
+        return $this->hasOne('App\Models\Coordonate');
+    }
+
+
+    /**
+     * The roles that belong to the user.
+     */
+    public function group()
+    {
+        return $this->belongsTo('App\Models\Group');
+    }
+
+
+    public function examens()
+    {
+        return $this->hasMany('App\Examen');
     }
 
 

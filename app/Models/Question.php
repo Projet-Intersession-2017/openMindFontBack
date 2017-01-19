@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
 
-class Role extends Model
+class Question extends Model
 {
     use CrudTrait;
 
@@ -15,7 +15,7 @@ class Role extends Model
 	|--------------------------------------------------------------------------
 	*/
 
-    protected $table = 'role';
+    protected $table = 'question';
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
@@ -36,12 +36,26 @@ class Role extends Model
 	*/
 
     /**
-     * The users that belong to the role.
+     * The roles that belong to the user.
      */
-    public function users()
+    public function type()
     {
-        return $this->hasMany('App\User');
+        return $this->hasOne('App\Models\TypeQuestion');
     }
+
+    /**
+     * The roles that belong to the user.
+     */
+    public function survey()
+    {
+        return $this->belongsTo('App\Models\Questionnaire');
+    }
+
+    public function choices()
+    {
+        return $this->hasMany('App\Models\Choice');
+    }
+
     /*
 	|--------------------------------------------------------------------------
 	| SCOPES

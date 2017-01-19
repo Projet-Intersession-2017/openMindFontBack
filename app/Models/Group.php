@@ -35,6 +35,13 @@ class Group extends Model
 	|--------------------------------------------------------------------------
 	*/
 
+    /**
+     * The users that belong to the role.
+     */
+    public function users()
+    {
+        return $this->hasMany('App\User');
+    }
     /*
 	|--------------------------------------------------------------------------
 	| SCOPES

@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Admin;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\UserRequest as StoreRequest;
-use App\Http\Requests\UserRequest as UpdateRequest;
+use App\Http\Requests\QuestionnaireRequest as StoreRequest;
+use App\Http\Requests\QuestionnaireRequest as UpdateRequest;
 
-class UserCrudController extends CrudController
+class QuestionnaireCrudController extends CrudController
 {
 
     public function setUp()
@@ -19,9 +19,9 @@ class UserCrudController extends CrudController
 		| BASIC CRUD INFORMATION
 		|--------------------------------------------------------------------------
 		*/
-        $this->crud->setModel("App\Models\User");
-        $this->crud->setRoute("intra/user");
-        $this->crud->setEntityNameStrings('user', 'users');
+        $this->crud->setModel("App\Models\Questionnaire");
+        $this->crud->setRoute("intra/questionnaire");
+        $this->crud->setEntityNameStrings('questionnaire', 'questionnaires');
 
         /*
 		|--------------------------------------------------------------------------
@@ -33,45 +33,9 @@ class UserCrudController extends CrudController
 
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
-        $this->crud->addField([
-            'name'        => 'spam',
-            'label'       => 'spam',
-            'type'        => 'radio',
-            'options'     => [
-                0 => "Non",
-                1 => "Oui"
-            ]
-        ]);
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
         // $this->crud->removeField('name', 'update/create/both');
         // $this->crud->removeFields($array_of_names, 'update/create/both');
-
-        $this->crud->addField([
-            'label' => 'Role',
-            'type' => 'select2',
-            'name' => 'role_id', // the db column for the foreign key
-            'entity' => 'role', // the method that defines the relationship in your Model
-            'attribute' => 'name', // foreign key attribute that is shown to user
-            'model' => 'App\Models\Role' // foreign key model
-        ]);
-
-        $this->crud->addField([
-            'label' => 'Coordonnée',
-            'type' => 'select2',
-            'name' => 'coordinate_id', // the db column for the foreign key
-            'entity' => 'coordonate', // the method that defines the relationship in your Model
-            'attribute' => 'full_address', // foreign key attribute that is shown to user
-            'model' => 'App\Models\Coordonate' // foreign key model
-        ]);
-
-        $this->crud->addField([
-            'label' => 'Group',
-            'type' => 'select2',
-            'name' => 'group_id', // the db column for the foreign key
-            'entity' => 'group', // the method that defines the relationship in your Model
-            'attribute' => 'name', // foreign key attribute that is shown to user
-            'model' => 'App\Models\Group' // foreign key model
-        ]);
 
         // ------ CRUD COLUMNS
         // $this->crud->addColumn(); // add a single column, at the end of the stack
@@ -133,50 +97,20 @@ class UserCrudController extends CrudController
     }
 
 	public function store(StoreRequest $request)
-	{ // insert item in the db
-        if ($request->input('password')) {
-            $item = $this->crud->create(\Request::except(['redirect_after_save']));
-            // now bcrypt the password
-            $item->password = bcrypt($request->input('password'));
-            $item->save();
-        } else {
-            $item = $this->crud->create(\Request::except(['redirect_after_save', 'password']));
-        }
-        // show a success message
-        \Alert::success(trans('backpack::crud.insert_success'))->flash();
-        // redirect the user where he chose to be redirected
-        switch (\Request::input('redirect_after_save')) {
-            case 'current_item_edit':
-                return \Redirect::to($this->crud->route.'/'.$item->id.'/edit');
-            default:
-                return \Redirect::to(\Request::input('redirect_after_save'));
-        }
-    }
+	{
+		// your additional operations before save here
+        $redirect_location = parent::storeCrud();
+        // your additional operations after save here
+        // use $this->data['entry'] or $this->crud->entry
+        return $redirect_location;
+	}
 
-    public function update(UpdateRequest $request)
-    {
-
+	public function update(UpdateRequest $request)
+	{
 		// your additional operations before save here
         $redirect_location = parent::updateCrud();
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
-
         return $redirect_location;
 	}
-
-
-    // /**
-    //  * Create a new user instance after a valid registration.
-    //  *
-    //  * @param  array  $data
-    //  * @return User
-    //  */
-    // public function create(CreateRequest $request
-    // {
-    //     $redirect_location = parent::createCrud();
-        
-    //     $this->data['password'] = bcrypt($this->data['password']);
-
-    //     return $redirect_location;
-    // }
 }
