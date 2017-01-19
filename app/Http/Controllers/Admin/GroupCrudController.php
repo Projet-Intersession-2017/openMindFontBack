@@ -20,7 +20,7 @@ class GroupCrudController extends CrudController
 		|--------------------------------------------------------------------------
 		*/
         $this->crud->setModel("App\Models\Group");
-        $this->crud->setRoute("admin/group");
+        $this->crud->setRoute("intra/group");
         $this->crud->setEntityNameStrings('group', 'groups');
 
         /*
