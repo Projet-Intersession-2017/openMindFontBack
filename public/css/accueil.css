@@ -26,7 +26,7 @@ h3{
 .presentation{
 	background-image:  url("/img/imageAccueil.jpg");
 	background-size: 100% auto;
-	height: 600px;
+	height: 700px;
 	background-repeat: no-repeat;
 	color : white;
 }
@@ -37,4 +37,26 @@ h3{
 	color : white;
 	font-family: sans-serif;
 	font-size: 1.5vw;
+}
+.menuNav{
+	height:200px;
+}
+.champsMenu{
+	font-size: 20px;
+}
+.blocLogo{
+	margin-top: 20px;
+}
+.blocMenu{
+	background-color: black;
+	border-radius: 5px;
+	float:right;
+}
+.champsMenu:hover{
+	background-color: black;
+	border-radius: 5px !important;
+	color : #c03b2b;
+}
+.champsMenu{
+	color : #c03b2b;
 }

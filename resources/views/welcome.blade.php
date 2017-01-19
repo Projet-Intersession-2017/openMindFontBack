@@ -15,33 +15,33 @@
         <link  rel="stylesheet" type="text/css" href="/css/accueil.css"/>
 		<!-- Latest compiled and minified JavaScript -->
         <script src="/vendor/jquery/jquery.js"></script>
-		<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>    </head>
+		<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>    
+	</head>
     <body>
-    @section('menu')
-        <nav class="navbar navbar-default">
-		  <div class="container-fluid">
-		  	<div class="col-md-6" align="left">
-			  <img src="/img/logo.png" alt='logo'  width="100px">
-			</div>
-			<div class="col-md-6" align="right">
-			  <a href="contact" class="btn btn-primary" >Nous contacter</a>
-			  <a href="intra/login" class="btn btn-primary" >Se connecter</a>
-			   <a href="intra/register" class="btn btn-primary" >S'inscrire</a>
-			</div>
-		  </div>
-		</nav>
-	@show
 		<div class="container-fluid">
-		 @section('corps') 
-			<div class="row">
-				<div class="col-sm-12 col-md-12 presentation">
-					<h1 align="center">OpenMind</h1>
+			<div class="row presentation">
+				 @section('menu')
+				  <div class="row">
+				  	<div class="col-md-7 blocLogo" align="right">
+						  	<a href="/" ><img src="/img/logo20.png" alt='logo' width="350px"></a>
+					</div>
+					<div class="col-md-5" >
+					    <ul class="nav navbar-nav blocMenu">
+					        <li><a href="contact" class="champsMenu" >Nous contacter</a></li>
+					        <li><a href="intra/login" class="champsMenu" >Se connecter</a></li>
+				            <!--<li><a href="intra/register" class="champsMenu">S'inscrire</a></li>-->
+				          </ul>
+					</div>
+				</div><br>
+				@show
+				@section('corps') 
+				<div class="row">
 					<div class="paragraphePresentation col-sm-8 col-md-8 col-md-offset-2 col-sm-offset-2">
 						<p>
 							Lorsque l'on suit des cours ou une formation, l'absence d'un espace de partage entre professeurs et étudiants peut se faire sentir afin de partager les connaissances plus facilement et progresser tous ensemble. 
 						</p>
 						<p>
-							OpenMind est un outil innovant qui deviendra une aide indispensable pour vos études. Grâce à différents outils mis à votre disposition, OpenMind vous permettra de suivre et de réussir au mieu vos études en évoluant dans un espace d'aide, d'échanges et de convivialité.
+							OpenMind est un outil innovant qui deviendra une aide indispensable pour vos études. Grâce à différents outils mis à votre disposition, OpenMind vous permettra de suivre et de réussir au mieux vos études en évoluant dans un espace d'aide, d'échanges et de convivialité.
 						</p>
 					</div>
 				</div>
@@ -52,7 +52,7 @@
 						<h3 align="center">La plateforme</h3>
 					  	<img src="/img/Platform.png" alt="plateforme">
 					 	<hr>
-						<p>Des mises en relation Mentor et
+						<p align="center">Des mises en relation Mentor et
 							Mentoré décuplées de manière
 							qualitative via notre algorithme
 						</p>
@@ -63,7 +63,7 @@
 						<h3 align="center">Les formations</h3>
 						<img src="/img/Formation.png" alt="formation">
 						<hr>
-						<p>De courtes formations en
+						<p align="center">De courtes formations en
 							présentiel et/ou des vidéos
 							ludiques pour les utilisateurs
 						</p>
@@ -74,7 +74,7 @@
 						<h3 align="center">Le suivi</h3>
 						<img src="/img/Suivi.png" alt="suivi">
 						<hr>
-						<p>Un suivi personnalisé des utilisateurs</p>
+						<p align="center"align="center">Un suivi personnalisé des utilisateurs</p>
 					</div>
 				</div>
 			</div>
@@ -110,23 +110,23 @@
 			</div>
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			  <!-- Indicators -->
-			  <ol class="carousel-indicators">
+			  <!--<ol class="carousel-indicators">
 			    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 			    <li data-target="#myCarousel" data-slide-to="1"></li>
 			    <li data-target="#myCarousel" data-slide-to="2"></li>
 			    <li data-target="#myCarousel" data-slide-to="3"></li>
-			  </ol>
+			  </ol>-->
 
 			  <!-- Wrapper for slides -->
 			  <div class="carousel-inner" role="listbox">
 			    <div class="item active" align="center">
-			      <img src="/img/orange.png" alt="orange" width="250px">
+			      <img src="/img/orange.png" alt="orange" width="200px">
 			    </div>
 			    <div class="item" align="center">
-			      <img src="/img/danone.png" alt="danone" width="250px">
+			      <img src="/img/danone.png" alt="danone" width="200px">
 			    </div>
 			    <div class="item" align="center">
-			      <img src="/img/orange.png" alt="orange" width="250px">
+			      <img src="/img/orange.png" alt="orange" width="200px">
 			    </div>
 			  </div>
 
