@@ -36,9 +36,14 @@
 			<div class="row">
 				<div class="col-sm-12 col-md-12 presentation">
 					<h1 align="center">OpenMind</h1>
-					<p class="paragraphePresentation">
-						OpenMind est un outil innovant.
-					</p>
+					<div class="paragraphePresentation col-sm-8 col-md-8 col-md-offset-2 col-sm-offset-2">
+						<p>
+							Lorsque l'on suit des cours ou une formation, l'absence d'un espace de partage entre professeurs et étudiants peut se faire sentir afin de partager les connaissances plus facilement et progresser tous ensemble. 
+						</p>
+						<p>
+							OpenMind est un outil innovant qui deviendra une aide indispensable pour vos études. Grâce à différents outils mis à votre disposition, OpenMind vous permettra de suivre et de réussir au mieu vos études en évoluant dans un espace d'aide, d'échanges et de convivialité.
+						</p>
+					</div>
 				</div>
 			</div><br>
 			<div class="row">
