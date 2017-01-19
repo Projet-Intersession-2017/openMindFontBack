@@ -14,7 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/contact', function () {
+    return view('contact');
+});
 
 Route::get('user/{user}', [
     'middleware' => ['auth', 'roles'], // A 'roles' middleware must be specified
