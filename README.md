@@ -32,3 +32,43 @@ Class seed not found ?
 ```
 composer dump-autoload -o 
 ```
+
+## Manage database
+
+### Connect
+```
+mysql -u USER -pPASSWORD
+
+USE openmind;
+
+SHOW COLUMNS FROM matable;
+
+SELECT * FROM role;
+```
+
+### Troubleshootings
+
+```
+DROP DATABASE openmind;
+
+CREATE DATABASE openmind;
+
+GRANT ALL PRIVILEGES ON openmind.* TO 'root'@'localhost' WITH GRANT OPTION;
+
+FLUSH PRIVILEGES;
+
+```
+
+Go on project base path
+
+```
+php artisan migrate --seed
+
+php artisan db:seed --class=RoleTableSeeder
+
+```
+
+### create crud 
+
+php artisan backpack:crud users
+```

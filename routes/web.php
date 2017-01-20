@@ -34,6 +34,13 @@ Route::group(['prefix' => 'intra', 'middleware' => 'admin'], function()
     CRUD::resource('user', 'Admin\UserCrudController');
     CRUD::resource('role', 'Admin\RoleCrudController');
     CRUD::resource('group', 'Admin\GroupCrudController');
+    CRUD::resource('coordonate', 'Admin\CoordonateCrudController');
+    CRUD::resource('examen', 'Admin\ExamenCrudController');
+    CRUD::resource('category', 'Admin\CategoryCrudController');
+    CRUD::resource('survey', 'Admin\QuestionnaireCrudController');
+    CRUD::resource('question', 'Admin\QuestionCrudController');
+    CRUD::resource('typequestion', 'Admin\TypeQuestionCrudController');
+    CRUD::resource('choice', 'Admin\ChoiceCrudController');
   
   // [...] other routes
 });
