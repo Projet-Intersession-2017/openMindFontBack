@@ -64,7 +64,7 @@ class UserAnswer extends Model
         return $this->hasOne('App\Models\Examen');
     }
     /**
-     * The users that belong to the role.
+     * The tutor that reply
      */
     public function user()
     {

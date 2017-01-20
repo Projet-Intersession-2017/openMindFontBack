@@ -48,6 +48,16 @@ class ExamenCrudController extends CrudController
             ]
         ]);
 
+
+        $this->crud->addField([
+            'label' => 'Tuteur',
+            'type' => 'select2',
+            'name' => 'user_id', // the db column for the foreign key
+            'entity' => 'tutor', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => 'App\Models\User' // foreign key model
+        ]);
+
         // ------ CRUD COLUMNS
         // $this->crud->addColumn(); // add a single column, at the end of the stack
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack

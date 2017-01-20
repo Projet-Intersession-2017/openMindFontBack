@@ -35,6 +35,13 @@ class Category extends Model
 	|--------------------------------------------------------------------------
 	*/
 
+    /**
+     * The users that belong to the role.
+     */
+    public function questionnaire()
+    {
+        return $this->hasMany('App\Models\Questionnaire');
+    }
     /*
 	|--------------------------------------------------------------------------
 	| SCOPES

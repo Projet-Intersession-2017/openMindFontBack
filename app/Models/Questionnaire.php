@@ -43,6 +43,15 @@ class Questionnaire extends Model
         return $this->belongsTo('App\Models\Examen');
     }
 
+
+    /**
+     * The roles that belong to the user.
+     */
+    public function category()
+    {
+        return $this->belongsTo('App\Models\Category');
+    }
+
     public function questions()
     {
         return $this->hasMany('App\Models\Question');

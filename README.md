@@ -70,5 +70,26 @@ php artisan db:seed --class=RoleTableSeeder
 
 ### create crud 
 
+```
 php artisan backpack:crud users
+```
+
+
+### Production
+
+Initialisation à faire une fois:  
+
+```
+
+git clone https://github.com/Projet-Intersession-2017/openMindFontBack.git
+mv openMindFontBack openmind
+cd openmind
+```
+
+Ensuite les updates : 
+
+```
+cd /var/www/html/openmind
+git pull origin rc ou branch
+./deploy.sh
 ```

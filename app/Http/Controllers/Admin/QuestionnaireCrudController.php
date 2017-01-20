@@ -20,7 +20,7 @@ class QuestionnaireCrudController extends CrudController
 		|--------------------------------------------------------------------------
 		*/
         $this->crud->setModel("App\Models\Questionnaire");
-        $this->crud->setRoute("intra/questionnaire");
+        $this->crud->setRoute("intra/survey");
         $this->crud->setEntityNameStrings('questionnaire', 'questionnaires');
 
         /*
@@ -31,10 +31,28 @@ class QuestionnaireCrudController extends CrudController
 
         $this->crud->setFromDb();
 
+        $this->crud->addField([
+            'label' => 'Catégorie',
+            'type' => 'select2',
+            'name' => 'category_id', // the db column for the foreign key
+            'entity' => 'category', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => 'App\Models\Category' // foreign key model
+        ]);
+
+
+        $this->crud->addField([
+            'label' => 'Examen',
+            'type' => 'select2',
+            'name' => 'examen_id', // the db column for the foreign key
+            'entity' => 'examen', // the method that defines the relationship in your Model
+            'attribute' => 'label', // foreign key attribute that is shown to user
+            'model' => 'App\Models\Examen' // foreign key model
+        ]);
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
-        // $this->crud->removeField('name', 'update/create/both');
+        // $this->crdu->removeField('name', 'update/create/both');
         // $this->crud->removeFields($array_of_names, 'update/create/both');
 
         // ------ CRUD COLUMNS

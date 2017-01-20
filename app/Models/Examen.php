@@ -35,9 +35,8 @@ class Examen extends Model
 	|--------------------------------------------------------------------------
 	*/
 
-
     /**
-     * The roles that belong to the user.
+     * Noob exam
      */
     public function user()
     {
@@ -48,6 +47,16 @@ class Examen extends Model
     {
         return $this->hasMany('App\Models\Questionnaire');
     }
+
+
+    /**
+     * Tutor's exam creation
+     */
+    public function tutor()
+    {
+        return $this->hasOne('App\Models\User');
+    }
+
 
 
     /*
