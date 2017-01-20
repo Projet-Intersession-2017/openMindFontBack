@@ -60,3 +60,17 @@ h3{
 .champsMenu{
 	color : #c03b2b;
 }
+.presentationEntete{
+	color : white;
+	text-align: center;
+}
+.margeDiv{
+	margin-top: 60px;
+}
+#PresentationAccueil{
+	background-color: rgba(44, 62, 80, 0.2);
+}
+.paragraphePlan{
+	color : black;
+	font-size: 40px;
+}
