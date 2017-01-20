@@ -111,8 +111,15 @@
 				<div class="row"> 
                     <div class="col-sm-12">  
                         <h2  align="center">L'application OpenMind</h2>
-                        <div class="paragraphePlan">
-                       	
+                        <div class="paragraphePlan" align="center">
+                       		Technologies utilisées
+	                       	<div class="row">
+	                       		<div class="col-md-2 col-md-offset-1"><img src="/img/laravel.png" alt="Logo laravel"></div>
+	                       		<div class="col-md-2"><img src="/img/mysql.png" alt="Logo mysql"></div>
+	                       		<div class="col-md-2"><img src="/img/jquery.png" alt="Logo jquery"></div>
+	                       		<div class="col-md-2"><img src="/img/bootstrap.png" alt="Logo bootstrap"></div>
+	                       		<div class="col-md-2"><img src="/img/github.png" alt="Logo github"></div>
+	                       	</div>
                         </div> 
                     </div>
                 </div>
