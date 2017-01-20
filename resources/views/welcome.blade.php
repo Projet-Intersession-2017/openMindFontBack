@@ -6,16 +6,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title> 
-        <!-- Fonts -->
-        <link  rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap-theme.css"/>
-        <link  rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.css"/>
-     <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+        @section('css')
+	        <!-- Fonts -->
+	        <link  rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap-theme.css"/>
+	        <link  rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.css"/>
+	     <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
 
-        <link  rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/font-awesome.min.css"/>
-        <link  rel="stylesheet" type="text/css" href="/css/accueil.css"/>
+	        <link  rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/font-awesome.min.css"/>
+	        <link  rel="stylesheet" type="text/css" href="/css/accueil.css"/>
+        @show
 		<!-- Latest compiled and minified JavaScript -->
-        <script src="/vendor/jquery/jquery.js"></script>
-		<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>    
+		@section('js')
+	        <script src="/vendor/jquery/jquery.js"></script>
+			<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+		@show 
+
 	</head>
     <body>
 		<div class="container-fluid">
