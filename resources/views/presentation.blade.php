@@ -120,6 +120,13 @@
 	                       		<div class="col-md-2"><img src="/img/bootstrap.png" alt="Logo bootstrap"></div>
 	                       		<div class="col-md-2"><img src="/img/github.png" alt="Logo github"></div>
 	                       	</div>
+	                       	Présentation de l'application
+	                       	 <div class="row">
+	                       		<div class="col-md-12">
+	                       			<a href="/"><button>OpenMind</button></a>
+	                       		</div>
+	                       		
+	                       	</div>
                         </div> 
                     </div>
                 </div>
