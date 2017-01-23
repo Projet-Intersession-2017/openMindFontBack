@@ -36,7 +36,7 @@ class QuestionnaireCrudController extends CrudController
             'type' => 'select2',
             'name' => 'category_id', // the db column for the foreign key
             'entity' => 'category', // the method that defines the relationship in your Model
-            'attribute' => 'name', // foreign key attribute that is shown to user
+            'attribute' => 'label', // foreign key attribute that is shown to user
             'model' => 'App\Models\Category' // foreign key model
         ]);
 
@@ -49,6 +49,28 @@ class QuestionnaireCrudController extends CrudController
             'attribute' => 'label', // foreign key attribute that is shown to user
             'model' => 'App\Models\Examen' // foreign key model
         ]);
+
+
+       $this->crud->setColumnDetails('category_id', [
+           // 1-n relationship
+           'label' => "Categorie", // Table column heading
+           'type' => "select",
+           'name' => 'category_id', // the column that contains the ID of that connected entity;
+           'entity' => 'category', // the method that defines the relationship in your Model
+           'attribute' => "label", // foreign key attribute that is shown to user
+           'model' => "App\Models\Category", // foreign key model
+        ]);
+
+       $this->crud->setColumnDetails('examen_id', [
+           // 1-n relationship
+           'label' => "Examen", // Table column heading
+           'type' => "select",
+           'name' => 'examen_id', // the column that contains the ID of that connected entity;
+           'entity' => 'examen', // the method that defines the relationship in your Model
+           'attribute' => "label", // foreign key attribute that is shown to user
+           'model' => "App\Models\Examen", // foreign key model
+        ]);
+
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');

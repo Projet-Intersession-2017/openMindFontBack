@@ -7,9 +7,11 @@ use Backpack\CRUD\app\Http\Controllers\CrudController;
 // VALIDATION: change the requests to match your own file names if you need form validation
 use App\Http\Requests\ExamenRequest as StoreRequest;
 use App\Http\Requests\ExamenRequest as UpdateRequest;
+use App\Models\User;
 
 class ExamenCrudController extends CrudController
 {
+    private $user;
 
     public function setUp()
     {
@@ -58,8 +60,37 @@ class ExamenCrudController extends CrudController
             'model' => 'App\Models\User' // foreign key model
         ]);
 
-        // ------ CRUD COLUMNS
-        // $this->crud->addColumn(); // add a single column, at the end of the stack
+       $this->crud->setColumnDetails('user_id', [
+           // 1-n relationship
+           'label' => "Tutor", // Table column heading
+           'type' => "select",
+           'name' => 'user_id', // the column that contains the ID of that connected entity;
+           'entity' => 'user', // the method that defines the relationship in your Model
+           'attribute' => "name", // foreign key attribute that is shown to user
+           'model' => "App\Models\User", // foreign key model
+        ]);
+
+
+       $this->crud->setColumnDetails('validate', [
+            'label'       => 'Online ?',
+            'type'        => 'radio',
+            'options'     => [
+                                0 => "Non",
+                                1 => "Oui"
+                            ]
+                    ]
+        );
+       
+
+    //    $this->crud->addColumn([ // n-n relationship (with pivot table)
+    //     'label'     => "User", // Table column heading
+    //     'type'      => 'select',
+    //     'name'      => 'orders_user_id', // the method that defines the relationship in your Model
+    //     'entity'    => 'users', // the method that defines the relationship in your Model
+    //     'attribute' => 'name', // foreign key attribute that is shown to user
+    //     'model'     => 'backpack.permissionmanager.user_model' // foreign key model**
+    // ]);
+       // $this->crud->removeColumn('user_id');
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack
         // $this->crud->removeColumn('column_name'); // remove a column from the stack
         // $this->crud->removeColumns(['column_name_1', 'column_name_2']); // remove an array of columns from the stack

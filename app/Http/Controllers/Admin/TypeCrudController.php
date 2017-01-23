@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Admin;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\Type_questionRequest as StoreRequest;
-use App\Http\Requests\Type_questionRequest as UpdateRequest;
+use App\Http\Requests\TypeRequest as StoreRequest;
+use App\Http\Requests\TypeRequest as UpdateRequest;
 
-class TypeQuestionCrudController extends CrudController
+class TypeCrudController extends CrudController
 {
 
     public function setUp()
@@ -19,8 +19,8 @@ class TypeQuestionCrudController extends CrudController
 		| BASIC CRUD INFORMATION
 		|--------------------------------------------------------------------------
 		*/
-        $this->crud->setModel("App\Models\TypeQuestion");
-        $this->crud->setRoute("intra/typequestion");
+        $this->crud->setModel("App\Models\Type");
+        $this->crud->setRoute("intra/type");
         $this->crud->setEntityNameStrings('type question', 'type questions');
 
         /*

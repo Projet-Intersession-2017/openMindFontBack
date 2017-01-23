@@ -44,7 +44,7 @@ Route::group(['prefix' => 'intra', 'middleware' => 'admin'], function()
     CRUD::resource('category', 'Admin\CategoryCrudController');
     CRUD::resource('survey', 'Admin\QuestionnaireCrudController');
     CRUD::resource('question', 'Admin\QuestionCrudController');
-    CRUD::resource('typequestion', 'Admin\TypeQuestionCrudController');
+    CRUD::resource('type', 'Admin\TypeCrudController');
     CRUD::resource('choice', 'Admin\ChoiceCrudController');
   
   // [...] other routes

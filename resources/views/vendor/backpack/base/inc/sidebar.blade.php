@@ -32,10 +32,10 @@
           <li class="treeview">
             <a href="#"><i class="fa fa-question"></i><span>Gestion QCM</span> <i class="fa fa-angle-left pull-right"></i></a>
             <ul class="treeview-menu">
+                    <li><a href="{{ url('intra/category') }}"><i class="fa fa-circle-o"></i> <span>Categories</span></a></li>
+                    <li><a href="{{ url('intra/type') }}"><i class="fa fa-circle-o"></i> <span>Type de question</span></a></li>
                     <li><a href="{{ url('intra/examen') }}"><i class="fa fa-circle-o"></i> <span>Examens</span></a></li>
                     <li><a href="{{ url('intra/survey') }}"><i class="fa fa-circle-o"></i> <span>Survey</span></a></li>
-                    <li><a href="{{ url('intra/category') }}"><i class="fa fa-circle-o"></i> <span>Categories</span></a></li>
-                    <li><a href="{{ url('intra/typequestion') }}"><i class="fa fa-circle-o"></i> <span>Type de question</span></a></li>
                     <li><a href="{{ url('intra/question') }}"><i class="fa fa-circle-o"></i> <span>Question</span></a></li>
                     <li><a href="{{ url('intra/choice') }}"><i class="fa fa-circle-o"></i> <span>Choices</span></a></li>
 

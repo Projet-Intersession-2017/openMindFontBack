@@ -19,7 +19,11 @@ class Questionnaire extends Model
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    // protected $fillable = [];
+    protected $fillable = ['labelle', 
+                'description', 
+                'temps',
+                'category_id',
+                'examen_id'];
     // protected $hidden = [];
     // protected $dates = [];
 

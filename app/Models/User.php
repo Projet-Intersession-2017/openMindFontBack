@@ -20,7 +20,7 @@ class User extends Model
     // public $timestamps = false;
     // protected $guarded = ['id'];
     // protected $guarded = ['id', 'remember_token'];
-    protected $fillable = ['name', 'email', 'password', 'role_id', 'group_id', 'coordinate_id', 'spam', 'coordonate'];
+    protected $fillable = ['name', 'email', 'password', 'role_id', 'group_id', 'coordinate_id', 'spam'];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -50,9 +50,9 @@ class User extends Model
     /**
      * The users that belong to the role.
      */
-    public function coordonate()
+    public function coordinate()
     {
-        return $this->hasOne('App\Models\Coordonate');
+        return $this->belongsTo('App\Models\Coordonate');
     }
 
 
@@ -66,6 +66,12 @@ class User extends Model
 
 
     public function examens()
+    {
+        return $this->hasMany('App\Examen');
+    }
+
+
+    public function tutorExam()
     {
         return $this->hasMany('App\Examen');
     }

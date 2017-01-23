@@ -37,7 +37,7 @@ class ChoiceRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
     public function attributes()
     {
         return [
-            //
+            'id' => \Request::get('id')
         ];
     }
 

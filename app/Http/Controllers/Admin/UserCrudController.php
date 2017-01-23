@@ -59,7 +59,7 @@ class UserCrudController extends CrudController
             'label' => 'Coordonnée',
             'type' => 'select2',
             'name' => 'coordinate_id', // the db column for the foreign key
-            'entity' => 'coordonate', // the method that defines the relationship in your Model
+            'entity' => 'coordinate', // the method that defines the relationship in your Model
             'attribute' => 'full_address', // foreign key attribute that is shown to user
             'model' => 'App\Models\Coordonate' // foreign key model
         ]);
@@ -71,6 +71,37 @@ class UserCrudController extends CrudController
             'entity' => 'group', // the method that defines the relationship in your Model
             'attribute' => 'name', // foreign key attribute that is shown to user
             'model' => 'App\Models\Group' // foreign key model
+        ]);
+
+
+       $this->crud->setColumnDetails('coordinate_id', [
+           // 1-n relationship
+           'label' => "Coordonnée", // Table column heading
+           'type' => "select",
+           'name' => 'coordinate_id', // the column that contains the ID of that connected entity;
+           'entity' => 'coordinate', // the method that defines the relationship in your Model
+           'attribute' => "full_address", // foreign key attribute that is shown to user
+           'model' => "App\Models\Coordonate", // foreign key model
+        ]);
+
+       $this->crud->setColumnDetails('role_id', [
+           // 1-n relationship
+           'label' => "Role", // Table column heading
+           'type' => "select",
+           'name' => 'role_id', // the column that contains the ID of that connected entity;
+           'entity' => 'role', // the method that defines the relationship in your Model
+           'attribute' => "name", // foreign key attribute that is shown to user
+           'model' => "App\Models\Role", // foreign key model
+        ]);
+
+       $this->crud->setColumnDetails('group_id', [
+           // 1-n relationship
+           'label' => "Group", // Table column heading
+           'type' => "select",
+           'name' => 'group_id', // the column that contains the ID of that connected entity;
+           'entity' => 'group', // the method that defines the relationship in your Model
+           'attribute' => "name", // foreign key attribute that is shown to user
+           'model' => "App\Models\Group", // foreign key model
         ]);
 
         // ------ CRUD COLUMNS

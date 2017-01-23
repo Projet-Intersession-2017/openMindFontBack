@@ -18,7 +18,7 @@ class Coordonate extends Model
     protected $table = 'coordinates';
     //protected $primaryKey = 'id';
     // public $timestamps = false;
-    // protected $guarded = ['id'];
+    // protected $guarded = ['id'];c
      protected $fillable = ['address'
 		,'country'
 		,'phone'
@@ -42,9 +42,8 @@ class Coordonate extends Model
     /**
      * The roles that belong to the user.
      */
-    public function user ()
-    {
-        return $this->belongsTo('App\User');
+    public function user () {
+        return $this->hasMany('App\User');
     }
 
 
