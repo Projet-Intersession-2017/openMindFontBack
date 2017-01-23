@@ -68,7 +68,7 @@ h3{
 	margin-top: 60px;
 }
 #PresentationAccueil{
-	background-color: rgba(44, 62, 80, 0.2);
+	/*background-color: rgba(44, 62, 80, 0.2);*/
 }
 .paragraphePlan{
 	color : black;
@@ -76,4 +76,12 @@ h3{
 }
 .paragrapheContact{
 	color:black;
+}
+.imageMarge, .paragrapheMarge{
+	margin-top: 40px;
+}
+.paragrapheObjectif{
+	text-align : justify;
+	color : black;
+	font-size: 25px;
 }

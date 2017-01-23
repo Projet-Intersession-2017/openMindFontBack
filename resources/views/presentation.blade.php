@@ -24,32 +24,8 @@
 	<script src="/vendor/jquery/jquery.cbpQTRotator.js"></script>
 @endsection
     
-@section('corps') 
-	<header class="header"> 
-		<nav class="navbar navbar-custom" role="navigation"> 
-			<div class="container"> 
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-				</div> 
-				<div class="collapse navbar-collapse" id="custom-collapse">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#home">Home</a></li>
-						<li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Works</a></li>
-                        <li><a href="#skills">Skills</a></li>
-						<li><a href="#testimonials">Testimonials</a></li>
-						<li><a href="#contact">Contact</a></li>
-					</ul>
-				</div> 
-			</div>  
-		</nav> 
-	</header> 
-	<section id="PresentationAccueil" class="pfblock pfblock-gray">
+@section('corps')
+	<section id="PresentationAccueil" class="pfblock">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-8 col-sm-offset-2">
@@ -68,24 +44,32 @@
 					<h2 align="center">Plan</h2>
 					<div>
 						<ul>
-							<li class="paragraphePlan">Introduction</li>
-							<li class="paragraphePlan">L'infrastructure</li>
-							<li class="paragraphePlan">L'application OpenMind</li>
-							<li class="paragraphePlan">Les possibilités d'évolution</li>
-							<li class="paragraphePlan">Conclusion</li>
+							<li class="paragraphePlan"><a href="#objectif">Objectif</a></li>
+							<li class="paragraphePlan"><a href="#infrastructure">L'infrastructure</a></li>
+							<li class="paragraphePlan"><a href="#application">L'application OpenMind</a></li>
+							<li class="paragraphePlan"><a href="#evolutions">Les possibilités d'évolutions</a></li>
+							<li class="paragraphePlan"><a href="#conclusion">Conclusion</a></li>
 						</ul>
 					</div>  
 				</div>
 			</div>  
 		</div>
 	</section>  
-    <section class="pfblock pfblock-gray" id="introduction"> 
+    <section class="pfblock pfblock-gray" id="objectif"> 
 			<div class="container">  
 				<div class="row"> 
                     <div class="col-sm-12">  
-                        <h2  align="center">Introduction</h2>
-                        <div class="paragraphePlan">
-                       	
+                        <h2  align="center">Objectif</h2>
+                        <div>
+                       		<li class="paragrapheObjectif">
+                       			Proposer une solution innovante et facile d'utilisation permettant d'aider l'étudiant(e) tout au long de sa scolarité.
+                       		</li>
+                       		<li class="paragrapheObjectif paragrapheMarge">
+                       			Faciliter la vie scolaire, l'échange d'information, la relation professeur/étudiant.
+                       		</li>
+                       		<li class="paragrapheObjectif paragrapheMarge">
+                       			Améliorer l'apprentissage et mettre la coopération et l'esprit d'équipe au centre de la pédagogie.
+                       		</li>
                         </div> 
                     </div>
                 </div>
@@ -96,10 +80,18 @@
 			<div class="row">
 				<div class="col-sm-12 col-md-12">
 					<h2 align="center">Infrastructure</h2>
-					<div class="paragraphePlan">
-                       	
+					<div class="paragraphePlan" align="center">
+                   		Technologies utilisées
+                       	<div class="row">
+                       		<div class="col-md-2"><img src="/img/apache.png" alt="Logo laravel"></div>
+                       		<div class="col-md-2"><img src="/img/php.png" alt="Logo laravel"></div>
+                       		<div class="col-md-2"><img src="/img/mysql.png" alt="Logo mysql"></div>
+                       		<div class="col-md-2"><img src="/img/smtp.png" alt="Logo jquery"></div>
+                       		<div class="col-md-2"><img src="/img/heartBeat.png" alt="Logo bootstrap"></div>
+                       		<div class="col-md-2"><img src="/img/rsync.png" alt="Logo github"></div>
+                       	</div>
                     </div> 
-                    <div class="col-sm-12 col-md-12" align="center">
+                    <div class="col-sm-12 col-md-12 imageMarge" align="center">
                     	<img src="/img/Infrastructure.PNG" alt="Infrastructure">
                     </div>
 				</div>
@@ -120,8 +112,10 @@
 	                       		<div class="col-md-2"><img src="/img/bootstrap.png" alt="Logo bootstrap"></div>
 	                       		<div class="col-md-2"><img src="/img/github.png" alt="Logo github"></div>
 	                       	</div>
+	                       	<div class="imageMarge">
 	                       	Présentation de l'application
-	                       	 <div class="row">
+	                       	</div>
+	                       	<div class="row">
 	                       		<div class="col-md-12">
 	                       			<a href="/"><button>OpenMind</button></a>
 	                       		</div>
@@ -132,11 +126,11 @@
                 </div>
 			</div> 
     </section>
-    <section id="evolution" class="pfblock">
+    <section id="evolutions" class="pfblock">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
-					<h2 align="center">Evolution</h2>
+					<h2 align="center">Evolutions</h2>
 					<div class="paragraphePlan">
                        	
                     </div> 
@@ -156,4 +150,7 @@
                 </div>
 			</div> 
     </section>   
+@endsection
+@section('footer')
+
 @endsection
