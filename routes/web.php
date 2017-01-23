@@ -20,6 +20,9 @@ Route::get('/contact', function () {
 Route::get('/presentation', function () {
     return view('presentation');
 });
+Route::get('/quizz', function () {
+    return view('quizz');
+});
 
 Route::get('user/{user}', [
     'middleware' => ['auth', 'roles'], // A 'roles' middleware must be specified

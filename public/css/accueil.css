@@ -83,3 +83,7 @@ h3{
 	color : black;
 	font-size: 30px;
 }
+.paragrapheQuestion, .paragrapheReponse{
+	color: black;
+	font-size: 40px;
+}
