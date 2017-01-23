@@ -57,20 +57,17 @@
 						<h3 align="center">La plateforme</h3>
 					  	<img src="/img/Platform.png" alt="plateforme">
 					 	<hr>
-						<p align="center">Des mises en relation Mentor et
-							Mentoré décuplées de manière
-							qualitative via notre algorithme
+						<p align="center">
+						Une plateforme intuitive et facile d'accès pour un meilleur confort d'utilisation.
 						</p>
 					</div>
 				</div>
 				<div class="col-sm-4 col-md-4">
 					<div class="thumbnail">
-						<h3 align="center">Les formations</h3>
+						<h3 align="center">Les cours</h3>
 						<img src="/img/Formation.png" alt="formation">
 						<hr>
-						<p align="center">De courtes formations en
-							présentiel et/ou des vidéos
-							ludiques pour les utilisateurs
+						<p align="center">De grandes variétés de cours validés à l'aide d'examens thématiques.
 						</p>
 					</div>
 				</div>
@@ -79,33 +76,30 @@
 						<h3 align="center">Le suivi</h3>
 						<img src="/img/Suivi.png" alt="suivi">
 						<hr>
-						<p align="center"align="center">Un suivi personnalisé des utilisateurs</p>
+						<p align="center">Un suivi personnalisé pour les étudiants, avec des professeurs facilement accessibles.</p>
 					</div>
 				</div>
 			</div>
 			<div class="row blocMentoring">
-				<h2 class="paragrapheColor" align="center">Qu'est ce que le Mentoring? </h2>
+				<h2 class="paragrapheColor" align="center">Qu'est ce que l'e-learning? </h2>
 				<div class="col-sm-6 col-md-6">
 					<h4 class="paragrapheColor">PARTAGE</h4>
 					<p class="paragrapheColor">Du partage d'expérience et de la transmission de savoir-être
-					et/ou savoir-faire bénévoles entre deux individus</p>
+					et/ou savoir-faire entre professeurs et étudiants</p>
 				</div>
 				<div class="col-sm-6 col-md-6">
-					<h4 class="paragrapheColor">TRANSMISSION</h4>
-					<p class="paragrapheColor">Le Mentoring traditionnel concerne un senior qui transmet
-	à un plus junior</p>
+					<h4 class="paragrapheColor">ACCESSIBILITE</h4>
+					<p class="paragrapheColor">L'e-learning peut faciliter l'accès à la connaissance. Un ordinateur équipé d'une connexion à Internet suffit.</p>
 				</div>
 			</div>
 			<div class="row blocMentoring">
 				<div class="col-sm-6 col-md-6">
-					<h4 class="paragrapheColor">Adaptability</h4>
-					<p class="paragrapheColor">There are other possible methods: reverse Mentoring, when
-	a junior mentors a senior and peer to peer mentoring</p>
+					<h4 class="paragrapheColor">APPRENTISSAGE</h4>
+					<p class="paragrapheColor">Des documents et des références facilement accessibles pour renforcer et étoffer les connaissances vues en cours.</p>
 				</div>
 				<div class="col-sm-6 col-md-6">
-					<h4 class="paragrapheColor">TRANSMISSION</h4>
-					<p class="paragrapheColor">Le Mentoring traditionnel concerne un senior qui transmet
-	à un plus junior</p>
+					<h4 class="paragrapheColor">COMPLEMENTARITE</h4>
+					<p class="paragrapheColor">Un parfait complément pour réussir dans la vie scolaire.</p>
 				</div>
 			</div> 
 			@show

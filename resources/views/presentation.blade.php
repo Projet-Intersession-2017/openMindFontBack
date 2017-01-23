@@ -37,7 +37,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="sommaire" class="pfblock">
+	<section id="sommaire" class="pfblock paragrapheMarge">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
@@ -117,7 +117,7 @@
 	                       	</div>
 	                       	<div class="row">
 	                       		<div class="col-md-12">
-	                       			<a href="/"><button>OpenMind</button></a>
+	                       			<a href="/" target="_bank"><button>OpenMind</button></a>
 	                       		</div>
 	                       		
 	                       	</div>
@@ -132,7 +132,21 @@
 				<div class="col-sm-12">
 					<h2 align="center">Evolutions</h2>
 					<div class="paragraphePlan">
-                       	
+                       	<li class="paragrapheEvolutions paragrapheMarge">
+                   			Relevé des présences
+                   		</li>
+                   		<li class="paragrapheEvolutions paragrapheMarge">
+                   			Emploi du temps/agenda partagé
+                   		</li>
+                   		<li class="paragrapheEvolutions paragrapheMarge">
+                   			Mentoring
+                   		</li>
+                   		<li class="paragrapheEvolutions paragrapheMarge">
+                   			Communication facilité via Skype
+                   		</li>
+                   		<li class="paragrapheEvolutions paragrapheMarge">
+                   			Zone d'actualité (soirées étudiantes, informations générales, etc ... )
+                   		</li>
                     </div> 
 				</div>
 			</div>  
