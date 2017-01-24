@@ -54,6 +54,18 @@ class ChoiceCrudController extends CrudController
            'attribute' => "label", // foreign key attribute that is shown to user
            'model' => "App\Models\Question", // foreign key model
         ]);
+        $this->crud->addColumn([
+           // 1-n relationship
+           'label' => "Type", // Table column heading
+           'type' => "select",
+           'name' => 'question_id', // the column that contains the ID of that connected entity;
+           'entity' => 'question', // the method that defines the relationship in your Model
+           'attribute' => "type", 
+            'columns' => [
+                    'name' => 'label'
+    ],// foreign key attribute that is shown to user
+           'model' => "App\Models\Question", // foreign key model
+        ]);
        // // var_dump($this->request);
        // $typeId = Question::find($this->data['question_id'])->get('type_id');
        // $type = Type::find($typeId);

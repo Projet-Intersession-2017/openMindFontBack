@@ -12,7 +12,7 @@
     <label>{!! $field['label'] !!}</label>
     <div class="clearfix"></div>
 
-    <div class="col-sm-3">
+    <div class="col-sm-12">
         <select
             id="page_or_link_select"
             name="{{ $field['name'] or 'type' }}"
@@ -25,7 +25,7 @@
 
                 @if (count($questions_options))
                     @foreach ($questions_options as $key => $value)
-                        <option data-type="{{ $value->type->label }}" value="{{ $key }}"
+                        <option data-type="{{ $value->type->label }}" value="{{ $value->id }}"
                             @if (isset($field['value']) && $key==$field['value'])
                                  selected
                             @endif
@@ -52,9 +52,6 @@
     @push('crud_fields_scripts')
         <script>
             jQuery(document).ready(function($) {
-                $("form .form-group.col-md-12:first-child").click(function(e) {
-                        alert("C'est moi");
-                });
 
                 var checkboxField = $("form .form-group.col-md-12:first-child");
                 checkboxField.attr('disabled');
@@ -63,9 +60,6 @@
                 var optionSelected = $("option:selected", this);
                 var type = optionSelected.attr('data-type');
                 var valueSelected = this.value;
-
-                alert("Change !! => " + type);
-
 
                 switch(type) {
 
@@ -84,7 +78,7 @@
                         checkboxField.attr('disabled');
                         checkboxField.addClass('hidden');
                 }
-                
+
                 $("#page_or_link_select").change(function(e) {
 
                     var checkboxField = $("form .form-group.col-md-12:first-child");
@@ -94,9 +88,6 @@
                     var optionSelected = $("option:selected", this);
                     var type = optionSelected.attr('data-type');
                     var valueSelected = this.value;
-
-                    alert("Change !! => " + type);
-
 
                     switch(type) {
 

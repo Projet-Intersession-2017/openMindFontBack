@@ -34,6 +34,11 @@ class Choice extends Model
 	| RELATIONS
 	|--------------------------------------------------------------------------
 	*/
+    public function question()
+    {
+        return $this->belongsTo('App\Models\Question');
+    }
+
 
     /*
 	|--------------------------------------------------------------------------

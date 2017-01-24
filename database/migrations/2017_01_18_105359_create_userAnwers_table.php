@@ -15,7 +15,6 @@ class CreateUserAnwersTable extends Migration
     {
         Schema::create('useranswer', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('label');
             $table->string('answer_value');
             $table->integer('note_response');
             $table->integer('note_survey');
