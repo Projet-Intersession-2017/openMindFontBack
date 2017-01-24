@@ -23,3 +23,6 @@ Ouvrir le naviguateur et lancer l'application via:
 ```
 > N.B.:
 >	si vous avez des erreurs lorsque vous vous rendez sur 127.0.0.1:8000, arrêter votre serveur et exécutez la commande suivante:
+
+
+te
