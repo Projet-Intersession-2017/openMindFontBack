@@ -56,6 +56,7 @@
 
           <!-- ======================================= -->
           <li class="header">{{ trans('backpack::base.user') }}</li>
+		   <li><a href="{{ url('intra/listeexamen') }}"><i class="fa fa-circle-o"></i> <span>Repondre aux Quiz</span></a></li>
           <li>
             <a href="{{ url(config('backpack.base.route_prefix', 'intra').'/logout') }}">
               <i class="fa fa-sign-out"></i> 
