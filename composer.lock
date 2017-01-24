@@ -107,16 +107,16 @@
         },
         {
             "name": "backpack/crud",
-            "version": "3.1.51",
+            "version": "3.1.54",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Backpack/CRUD.git",
-                "reference": "38395fc5296a4d827aeb537660d885a0acbc94ca"
+                "reference": "457ba75710e0ff1a96c7ec357724477ccd8c1372"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Backpack/CRUD/zipball/38395fc5296a4d827aeb537660d885a0acbc94ca",
-                "reference": "38395fc5296a4d827aeb537660d885a0acbc94ca",
+                "url": "https://api.github.com/repos/Laravel-Backpack/CRUD/zipball/457ba75710e0ff1a96c7ec357724477ccd8c1372",
+                "reference": "457ba75710e0ff1a96c7ec357724477ccd8c1372",
                 "shasum": ""
             },
             "require": {
@@ -167,7 +167,7 @@
                 "read",
                 "update"
             ],
-            "time": "2017-01-11T06:11:49+00:00"
+            "time": "2017-01-20T07:45:58+00:00"
         },
         {
             "name": "backpack/logmanager",
@@ -754,16 +754,16 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "v2.5.7",
+            "version": "v2.5.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "3a351369582dade60c750e2cef540eb7b568e6b3"
+                "reference": "0d2f8187d4b4c7b72d8e2acba359e25c36feaf5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/3a351369582dade60c750e2cef540eb7b568e6b3",
-                "reference": "3a351369582dade60c750e2cef540eb7b568e6b3",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/0d2f8187d4b4c7b72d8e2acba359e25c36feaf5e",
+                "reference": "0d2f8187d4b4c7b72d8e2acba359e25c36feaf5e",
                 "shasum": ""
             },
             "require": {
@@ -821,7 +821,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2017-01-14T21:05:28+00:00"
+            "time": "2017-01-19T13:27:33+00:00"
         },
         {
             "name": "doctrine/inflector",

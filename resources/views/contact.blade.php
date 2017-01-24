@@ -15,22 +15,22 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label for="name">Votre nom</label>
+                        <label for="name" class="paragrapheContact">Votre nom</label>
                         <input type="text" class="form-control" id="name" placeholder="Nom" required="required" />
                     </div>
                     <div class="form-group">
-                        <label for="email">Votre email</label>
+                        <label for="email" class="paragrapheContact">Votre email</label>
                         <div class="input-group">
                             <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
                             </span>
                             <input type="email" class="form-control" id="email" placeholder="Email" required="required" /></div>
                     </div>
                  	<div class="form-group">
-                        <label for="subject">Sujet</label>
+                        <label for="subject" class="paragrapheContact">Sujet</label>
                         <input type="text" class="form-control" id="sujet" placeholder="Sujet" required="required" />
                     </div>
                     <div class="form-group">
-                        <label for="name">Message</label>
+                        <label for="name" class="paragrapheContact">Message</label>
                         <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
                             placeholder="Message"></textarea>
                     </div>
@@ -44,4 +44,9 @@
         </div>
     </div>
 </div>
+
+
 @endsection
+@section('footer')
+	@parent
+	@endsection
