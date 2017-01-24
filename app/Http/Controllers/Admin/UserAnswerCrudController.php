@@ -31,6 +31,77 @@ class UserAnswerCrudController extends CrudController
 
         $this->crud->setFromDb();
 
+
+
+        $this->crud->addField([
+            'label' => 'Questionnaire',
+            'type' => 'select2',
+            'name' => 'survey_id', // the db column for the foreign key
+            'entity' => 'survey', // the method that defines the relationship in your Model
+            'attribute' => 'labelle', // foreign key attribute that is shown to user
+            'model' => 'App\Models\Questionnaire', // foreign key model
+            'attributes' => [
+               // 'disabled' => 'disabled'
+
+             ], // extra HTML attributes and values your input might need
+        ]);
+
+
+        $this->crud->addField([
+            'label' => 'Choices',
+            'type' => 'select2',
+            'name' => 'choice_id', // the db column for the foreign key
+            'entity' => 'choice', // the method that defines the relationship in your Model
+            'attribute' => 'label', // foreign key attribute that is shown to user
+            'model' => 'App\Models\Choice', // foreign key model
+
+            'attributes' => [
+               // 'disabled' => 'disabled'
+
+             ], // extra HTML attributes and values your input might need
+        ]);
+
+        $this->crud->addField([
+            'label' => 'Examen',
+            'type' => 'select2',
+            'name' => 'examen_id', // the db column for the foreign key
+            'entity' => 'examen', // the method that defines the relationship in your Model
+            'attribute' => 'label', // foreign key attribute that is shown to user
+            'model' => 'App\Models\Examen', // foreign key model
+            'attributes' => [
+               // 'disabled' => 'disabled'
+
+             ], // extra HTML attributes and values your input might need
+        ]);
+
+        $this->crud->addField([ 
+            'label' => 'User',
+            'type' => 'select2',
+            'name' => 'user_id', // the db column for the foreign key
+            'entity' => 'user', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => 'App\Models\User', // foreign key model
+
+            'attributes' => [
+               // 'disabled' => 'disabled'
+
+             ], // extra HTML attributes and values your input might need
+        ]);
+
+        $this->crud->addField([ 
+            'label' => 'Question',
+            'type' => 'select2',
+            'name' => 'question_id', // the db column for the foreign key
+            'entity' => 'question', // the method that defines the relationship in your Model
+            'attribute' => 'label', // foreign key attribute that is shown to user
+            'model' => 'App\Models\Question', // foreign key model
+
+            'attributes' => [
+               // 'disabled' => 'disabled'
+             ], // extra HTML attributes and values your input might need
+        ]);
+
+
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');

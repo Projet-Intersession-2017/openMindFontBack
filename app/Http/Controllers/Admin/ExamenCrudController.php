@@ -49,6 +49,19 @@ class ExamenCrudController extends CrudController
                 1 => "Oui"
             ]
         ]);
+        $this->crud->addField(
+            [       // Select2Multiple = n-n relationship (with pivot table)
+                'label' => "Groups",
+                'type' => 'select2_multiple',
+                'name' => 'groups', // the method that defines the relationship in your Model
+                'entity' => 'groups', // the method that defines the relationship in your Model
+                'attribute' => 'name', // foreign key attribute that is shown to user
+                'model' => "App\Models\Group", // foreign key model
+                'pivot' => true, // on create&update, do you need to add/delete pivot table entries?
+            ]
+            );
+
+       
 
 
         $this->crud->addField([
@@ -79,6 +92,15 @@ class ExamenCrudController extends CrudController
                                 1 => "Oui"
                             ]
                     ]
+        );
+        $this->crud->addColumn([       // Select2Multiple = n-n relationship (with pivot table)
+                'label' => "Groups",
+                'type' => 'select2_multiple',
+                'name' => 'groups', // the method that defines the relationship in your Model
+                'entity' => 'groups', // the method that defines the relationship in your Model
+                'attribute' => 'name', // foreign key attribute that is shown to user
+                'model' => "App\Models\Group", // foreign key model
+            ]
         );
        
 
