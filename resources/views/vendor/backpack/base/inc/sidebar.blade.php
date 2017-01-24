@@ -60,6 +60,7 @@
               @if (count(Auth::user()->group) > 0)
                 <a href="#"><i class="fa fa-question"></i> <span>Examen</span><i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
+              		   <li><a href="{{ url('intra/listeexamen') }}"><i class="fa fa-circle-o"></i> <span>Repondre aux Quiz</span></a></li>
                    @foreach(Auth::user()->group->examens as $key => $examen )
                    <li>
                       <a href="{{ url(config('backpack.base.route_prefix', 'intra').'/URL?id='.$examen->id) }}">
