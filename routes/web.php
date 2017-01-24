@@ -27,12 +27,12 @@ Route::get('/intra/listeexamen', [
     'uses' => 'Admin\QuizController@listeexamen',
     //'roles' => ['Etudiant']
 ]);
-Route::get('/intra/examen/{idExamen}', [
+Route::get('/intra/candidat/examen/{idExamen}', [
 	'middleware' => ['auth' /*, 'roles'*/], // A 'roles' middleware must be specified
     'uses' => 'Admin\QuizController@listesurvey',
     //'roles' => ['Etudiant']
 ]);
-Route::get('/intra/examen/{idExamen}/survey/{idSurvey}', [
+Route::get('/intra/candidat/examen/{idExamen}/survey/{idSurvey}', [
 	'middleware' => ['auth' /*, 'roles'*/], // A 'roles' middleware must be specified
     'uses' => 'Admin\QuizController@listequestions',
     //'roles' => ['Etudiant']
