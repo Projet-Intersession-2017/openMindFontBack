@@ -50,7 +50,6 @@
 				idChoice += $(this).val()+',';
             });
             idChoice= idChoice.substring(0,idChoice.length-1);
-           // var idChoice = $(obj).closest('div').find('.idChoice').val()
             var idQuestionSplit = tabAvant.split('-');
             idQuestion=idQuestionSplit[1];
             var tabApres = $(obj).closest('div').next().attr('id');
@@ -78,6 +77,7 @@
                 tabReponse.push(reponseI);
             }
             $('.TypeCheckbox').prop("checked", false);
+            $('.inputReponse').val('');
         }
     </script>
 <div class="col-lg-12">
@@ -92,7 +92,7 @@
 					    	foreach ($questionsList as $key => $value){
 					    		if ($labelQuestion!=$value->Intitule){
 					    			 if ($labelQuestion!='')
-					    			 	echo '<button type="button" class="btn btn-primary btnSuivant">Suivant</button></div>';
+					    			 	echo '</br><button type="button" class="btn btn-primary btnSuivant">Suivant</button></div>';
 					    			 echo'<div id="tabs-'.$value->id.'" class="question">';
 					    			 echo'<p class="paragrapheQuestion">'. $value->Intitule.'</p>';
 					    			 $labelQuestion=$value->Intitule;
@@ -101,14 +101,13 @@
 					    			echo'<input type="checkbox" class="TypeCheckbox"><span class="paragrapheReponse">'.$value->choix.'</span><br>';
 					    			echo'<input type="hidden" class="idChoice" value="'. $value->idChoix.'">';
 					    			echo'<input type="hidden" class="idNote" value="'. $value->note.'">';
-					    			//array_push($reponses, $value->reponse);
 					    		}else{
 					    			 echo'<input type="text" class="inputReponse">';
 					    			 echo'<input type="hidden" class="idChoice" value="'. $value->idChoix.'">';
 					    			 echo'<input type="hidden" class="idNote" value="'. $value->note.'">';
 					    		} 
 					    	}
-					    	echo '<button type="button" class="btn btn-primary btnTerminer">Terminer</button></div>';	
+					    	echo '</br><button type="button" class="btn btn-primary btnTerminer">Terminer</button></div>';	
 					    ?> 
 				      </div>
 				    </div>
