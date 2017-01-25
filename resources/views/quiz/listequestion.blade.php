@@ -27,7 +27,7 @@
                 $.ajax({
                     url : '/intra/candidat/'+<?php echo $candidatId ?>+'/examen/'+<?php echo $examenId ?>+'/survey/'+<?php echo $surveyId ?>+'/sendresults',
                     type : 'POST',
-                    data : "tabQuestion=" + tabQuestion + "&tabReponse=" + tabReponse,
+                    data : "tabQuestion=" + tabQuestion + "&tabReponse=" + tabReponse + "&tabNoteSurvey=" + tabNote + "&tabChoiceId=" + tabIdChoice,
                     dataType : 'html',
                     success: function(data) {
                         alert(data); 
@@ -41,8 +41,17 @@
         });
         function stockerReponse(obj){
             var tabAvant = $(obj).closest('div').attr('id');
-            var note = $(obj).closest('div').find('.idNote').val();
-            var idChoice = $(obj).closest('div').find('.idChoice').val()
+            var note='';
+            $(obj).closest('div').find('.idNote').each(function() {
+				note += $(this).val()+',';
+            });
+            note= note.substring(0,note.length-1);
+            var idChoice='';
+            $(obj).closest('div').find('.idChoice').each(function() {
+				idChoice += $(this).val()+',';
+            });
+            idChoice= idChoice.substring(0,idChoice.length-1);
+           // var idChoice = $(obj).closest('div').find('.idChoice').val()
             var idQuestionSplit = tabAvant.split('-');
             idQuestion=idQuestionSplit[1];
             var tabApres = $(obj).closest('div').next().attr('id');
@@ -57,6 +66,8 @@
                 $('.TypeCheckbox').each(function() {
                     if ($(this).is(":checked")){
                         reponseC += $(this).next('span').text()+'||';
+                    }else{
+                    	reponseC += ' '+'||';
                     }
                 });
                 reponseC= reponseC.substring(0,reponseC.length-2);
@@ -68,6 +79,7 @@
                 tabReponse.push(reponseI);
             }
             alert(tabIdChoice)
+            alert(tabReponse)
             $('.TypeCheckbox').prop("checked", false);
         }
     </script>
@@ -86,17 +98,17 @@
 					    			 	echo '<button type="button" class="btn btn-primary btnSuivant">Suivant</button></div>';
 					    			 echo'<div id="tabs-'.$value->id.'" class="question">';
 					    			 echo'<p class="paragrapheQuestion">'. $value->Intitule.'</p>';
-					    			 echo'<input type="text" class="idNote" value="'. $value->note.'">';
 					    			 $labelQuestion=$value->Intitule;
 					    		} 
 					    		if ($value->type_id=="1" && $labelQuestion==$value->Intitule ){
 					    			echo'<input type="checkbox" class="TypeCheckbox"><span class="paragrapheReponse">'.$value->choix.'</span><br>';
-					    			if ($value->reponse=='true')
-					    				echo'<input type="text" class="idChoice" value="'. $value->idChoix2.'">';
+					    			echo'<input type="text" class="idChoice" value="'. $value->idChoix.'">';
+					    			echo'<input type="hidden" class="idNote" value="'. $value->note.'">';
 					    			//array_push($reponses, $value->reponse);
 					    		}else{
 					    			 echo'<input type="text" class="inputReponse">';
-					    			 echo'<input type="text" class="idChoice" value="'. $value->idChoix2.'">';
+					    			 echo'<input type="text" class="idChoice" value="'. $value->idChoix.'">';
+					    			 echo'<input type="hidden" class="idNote" value="'. $value->note.'">';
 					    		} 
 					    	}
 					    	echo '<button type="button" class="btn btn-primary btnTerminer">Terminer</button></div>';	

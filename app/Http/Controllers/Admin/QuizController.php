@@ -50,6 +50,8 @@ class QuizController extends Controller
 
         $questionsList = explode(",", $request->tabQuestion);
         $reponsesList = explode(",", $request->tabReponse);
+        $noteList = explode(",", $request->tabNoteSurvey);
+        $idChoiceList = explode(",", $request->tabChoiceId);
         for ($i = 0; $i < count($reponsesList); $i++)
         {
             if(strpos($reponsesList[$i], "||") == false)
@@ -68,11 +70,11 @@ class QuizController extends Controller
             } 
         }
 
-        var_dump($tabQuestionReponse);
         for ($j = 0; $j < $tabQuestionReponse; $j = $j+2)
         {
-            $this->repoQuiz->setUserAnswers($idCandidat, $idExamen, $idSurvey, $tabQuestionReponse[$j], $tabQuestionReponse[$j+1]);
+            $this->repoQuiz->setUserAnswers($idCandidat, $idExamen, $idSurvey, $tabQuestionReponse[$j], $tabQuestionReponse[$j+1], $noteList[$j], $idChoiceList[$j]);
         }
         
+        return 0;
     }
 }

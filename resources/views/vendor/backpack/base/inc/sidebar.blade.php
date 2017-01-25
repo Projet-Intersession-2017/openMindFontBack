@@ -63,7 +63,7 @@
               		   <li><a href="{{ url('intra/listeexamen') }}"><i class="fa fa-circle-o"></i> <span>Repondre aux Quiz</span></a></li>
                    @foreach(Auth::user()->group->examens as $key => $examen )
                    <li>
-                      <a href="{{ url(config('backpack.base.route_prefix', 'intra').'/candidat/examen/'.$examen->id) }}">
+                      <a href="{{ url(config('backpack.base.route_prefix', 'intra').'/candidat/'.Auth::user()->id.'/examen/'.$examen->id) }}">
                         <i class="fa fa-circle-o"></i>  
                         <span>{{ $examen->label}}
                         </span>
