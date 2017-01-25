@@ -74,6 +74,8 @@ Route::group(['prefix' => 'intra', 'middleware' => 'admin'], function()
     CRUD::resource('useranswer', 'Admin\UserAnswerCrudController');
     CRUD::resource('listfaq', 'Admin\GroupechatCrudController');
     CRUD::resource('faq', 'Admin\ChatCrudController');
+    CRUD::resource('notebook', 'Admin\NoteBookCrudController');
+    CRUD::resource('note', 'Admin\NoteCrudController');
 
   // [...] other routes
 });

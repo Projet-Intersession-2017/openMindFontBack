@@ -15,6 +15,8 @@
         </div>
         <ul class="sidebar-menu">
         @if (count(Auth::user()->role) > 0)
+
+          <!-- ROOT - ADMIN PART -->
           @if("Root" ==  Auth::user()->role->name || "Administrator" ==  Auth::user()->role->name)
             <!-- sidebar menu: : style can be found in sidebar.less -->
               <li class="header">{{ trans('backpack::base.administration') }}</li>
@@ -60,15 +62,21 @@
               
               <li><a href="{{ url(config('backpack.base.route_prefix', 'intra').'/log') }}"><i class="fa fa-terminal"></i><span> Manage Logs</span></a></li>
             @endif
-      	    @if("Etudiant" ==  Auth::user()->role->name)
-        		<!-- ======================================= -->
-        		<li class="header">{{ trans('backpack::base.user') }}</li>
-        		<li class="treeview">
-        		  @if (count(Auth::user()->group) > 0)
-        		    <a href="#"><i class="fa fa-question"></i> <span>Examen</span><i class="fa fa-angle-left pull-right"></i></a>
-        		    <ul class="treeview-menu">
+
+
+            <!-- END ROOT - ADMIN PART -->
+
+
+            <!-- USER PART -->
+            @if("Etudiant" ==  Auth::user()->role->name)
+            <!-- ======================================= -->
+            <li class="header">{{ trans('backpack::base.user') }}</li>
+            <li class="treeview">
+              @if (count(Auth::user()->group) > 0)
+                <a href="#"><i class="fa fa-question"></i> <span>Examen</span><i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
                    @if (count(Auth::user()->group->examens) > 0)
-          		       @foreach(Auth::user()->group->examens as $key => $examen )
+                     @foreach(Auth::user()->group->examens as $key => $examen )
                        <li>
                           <a href="{{ url(config('backpack.base.route_prefix', 'intra').'/candidat/'.Auth::user()->id.'/examen/'.$examen->id) }}">
                             <i class="fa fa-circle-o"></i>  
@@ -80,13 +88,23 @@
                     @else
                       - Pas d'examen ! -
                     @endif
-        		    </ul>
-        		  @endif
-  		      </li>   
+                </ul>
+              @endif
+            </li>   
             @endif    
+
+            <!-- END USER PART -->
+
           @else
             - AUCUN ROLE : voir avec l'administrateur -
           @endif
+            <li class="treeview">
+                <a href="#"><i class="fa fa-weixin"></i><span>NoteBook</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ url('intra/notebook') }}"><i class="fa fa-circle-o"></i> <span>Notebooks</span></a></li>
+                    <li><a href="{{ url('intra/note') }}"><i class="fa fa-circle-o"></i> <span>Notes</span></a></li>
+                </ul>
+            </li>
             <li>
               <a href="{{ url(config('backpack.base.route_prefix', 'intra').'/logout') }}">
                 <i class="fa fa-sign-out"></i>  
