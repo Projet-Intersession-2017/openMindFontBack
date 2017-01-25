@@ -20,9 +20,31 @@ Route::get('/contact', function () {
 Route::get('/presentation', function () {
     return view('presentation');
 });
-Route::get('/quizz', function () {
-    return view('quizz');
-});
+
+/**********Routes pour les examens des étudiants *************/
+Route::get('/intra/listeexamen', [
+	'middleware' => ['auth' /*, 'roles'*/], // A 'roles' middleware must be specified
+    'uses' => 'Admin\QuizController@listeexamen',
+    //'roles' => ['Etudiant']
+]);
+Route::get('/intra/candidat/{idCandidat}/examen/{idExamen}', [
+	'middleware' => ['auth' /*, 'roles'*/], // A 'roles' middleware must be specified
+    'uses' => 'Admin\QuizController@listesurvey',
+    //'roles' => ['Etudiant']
+]);
+Route::get('/intra/candidat/{idCandidat}/examen/{idExamen}/survey/{idSurvey}', [
+	'middleware' => ['auth' /*, 'roles'*/], // A 'roles' middleware must be specified
+    'uses' => 'Admin\QuizController@listequestions',
+    //'roles' => ['Etudiant']
+]);
+Route::post('/intra/candidat/{idCandidat}/examen/{idExamen}/survey/{idSurvey}/sendresults', [
+	'middleware' => ['auth' /*, 'roles'*/], // A 'roles' middleware must be specified
+    'uses' => 'Admin\QuizController@sendresults',
+    //'roles' => ['Etudiant']
+]);
+
+
+
 
 Route::get('user/{user}', [
     'middleware' => ['auth', 'roles'], // A 'roles' middleware must be specified
