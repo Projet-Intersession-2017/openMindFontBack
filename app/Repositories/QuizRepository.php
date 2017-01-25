@@ -48,7 +48,7 @@ class QuizRepository
 
 	public function setUserAnswers($idCandidat, $idExamen, $idSurvey, $idQuestion, $valueReponse, $idNote, $idChoice)
 	{
-		$questionList = DB::insert("INSERT INTO useranswer (user_id, examen_id, survey_id, question_id, answer_value, note_survey, choice_id
+		$questionList = DB::insert("INSERT INTO useranswer (user_id, examen_id, survey_id, question_id, answer_value, note_response, choice_id
  			VALUES (".$idCandidat.",".$idExamen.",".$idSurvey.",".$idQuestion.",'".$valueReponse."',".$idNote.",".$idChoice.")");
 		return true;
 	}
