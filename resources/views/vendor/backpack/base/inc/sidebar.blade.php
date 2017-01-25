@@ -49,7 +49,7 @@
                         <li><a href="{{ url('intra/useranswer') }}"><i class="fa fa-circle-o"></i> <span>Résultat</span></a></li>
                 </ul>
               </li>
-		<li class="treeview">
+	           	<li class="treeview">
                   <a href="#"><i class="fa fa-weixin"></i><span>FAQ</span> <i class="fa fa-angle-left pull-right"></i></a>
                   <ul class="treeview-menu">
                       <li><a href="{{ url('intra/listfaq') }}"><i class="fa fa-circle-o"></i> <span>Liste FAQ</span></a></li>
@@ -60,27 +60,31 @@
               
               <li><a href="{{ url(config('backpack.base.route_prefix', 'intra').'/log') }}"><i class="fa fa-terminal"></i><span> Manage Logs</span></a></li>
             @endif
-	    @if("Etudiant" ==  Auth::user()->role->name)
-		<!-- ======================================= -->
-		<li class="header">{{ trans('backpack::base.user') }}</li>
-		<li class="treeview">
-		  @if (count(Auth::user()->group) > 0)
-		    <a href="#"><i class="fa fa-question"></i> <span>Examen</span><i class="fa fa-angle-left pull-right"></i></a>
-		    <ul class="treeview-menu">
-		       @foreach(Auth::user()->group->examens as $key => $examen )
-             <li>
-                <a href="{{ url(config('backpack.base.route_prefix', 'intra').'/candidat/'.Auth::user()->id.'/examen/'.$examen->id) }}">
-                  <i class="fa fa-circle-o"></i>  
-                  <span>{{ $examen->label}}
-                  </span>
-                </a>
-              </li>
-            @endforeach
-		    </ul>
-		  @endif
-		</li>   
+      	    @if("Etudiant" ==  Auth::user()->role->name)
+        		<!-- ======================================= -->
+        		<li class="header">{{ trans('backpack::base.user') }}</li>
+        		<li class="treeview">
+        		  @if (count(Auth::user()->group) > 0)
+        		    <a href="#"><i class="fa fa-question"></i> <span>Examen</span><i class="fa fa-angle-left pull-right"></i></a>
+        		    <ul class="treeview-menu">
+                   @if (count(Auth::user()->group->examens) > 0)
+          		       @foreach(Auth::user()->group->examens as $key => $examen )
+                       <li>
+                          <a href="{{ url(config('backpack.base.route_prefix', 'intra').'/candidat/'.Auth::user()->id.'/examen/'.$examen->id) }}">
+                            <i class="fa fa-circle-o"></i>  
+                            <span>{{ $examen->label}}
+                            </span>
+                          </a>
+                        </li>
+                      @endforeach
+                    @else
+                      - Pas d'examen ! -
+                    @endif
+        		    </ul>
+        		  @endif
+  		      </li>   
             @endif    
-          @else 
+          @else
             - AUCUN ROLE : voir avec l'administrateur -
           @endif
             <li>
