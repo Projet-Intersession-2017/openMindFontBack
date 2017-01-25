@@ -1,10 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Eloquent\Model;
-use App\Models\Group;
 
-class GroupTableSeeder extends Seeder
+class GroupchatTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,7 +14,7 @@ class GroupTableSeeder extends Seeder
         if (App::environment() === 'production') {
             exit('I just stopped you getting fired. Love, Amo.');
         }
-        DB::table('group')->delete();
+        DB::table('group')->truncate();
         Group::create([
             'id'            => 1,
             'name'          => 'dev1',
@@ -29,5 +27,4 @@ class GroupTableSeeder extends Seeder
             'id'            => 3,
             'name'          => 'dev3',
         ]);
-    }
 }

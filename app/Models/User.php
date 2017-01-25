@@ -64,18 +64,14 @@ class User extends Model
         return $this->belongsTo('App\Models\Group');
     }
 
-
-    public function examens()
-    {
-        return $this->hasMany('App\Examen');
-    }
-
-
     public function tutorExam()
     {
         return $this->hasMany('App\Examen');
     }
-
+    public function tutorGroupChat()
+    {
+        return $this->hasOne('App\Models\Groupchat');
+    }
 
     /*
 	|--------------------------------------------------------------------------

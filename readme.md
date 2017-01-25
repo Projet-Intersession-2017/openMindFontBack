@@ -25,4 +25,80 @@ Ouvrir le naviguateur et lancer l'application via:
 >	si vous avez des erreurs lorsque vous vous rendez sur 127.0.0.1:8000, arrêter votre serveur et exécutez la commande suivante:
 
 
-te
+## FAQ
+
+Class seed not found ?
+
+```
+composer dump-autoload -o 
+```
+
+## Manage database
+
+### Connect
+```
+mysql -u USER -pPASSWORD
+
+USE openmind;
+
+SHOW COLUMNS FROM matable;
+
+SELECT * FROM role;
+```
+
+### Troubleshootings
+
+```
+DROP DATABASE openmind;
+
+CREATE DATABASE openmind;
+
+GRANT ALL PRIVILEGES ON openmind.* TO 'root'@'localhost' WITH GRANT OPTION;
+
+FLUSH PRIVILEGES;
+
+```
+
+Go on project base path
+
+```
+php artisan migrate --seed
+
+php artisan db:seed --class=RoleTableSeeder
+
+```
+
+### create crud 
+
+
+```
+php artisan backpack:crud users
+```
+
+### pb de déploment seed supprimer la table pivot 
+
+```
+DROP DATABASE openmind;
+
+CREATE DATABASE openmind;
+
+```
+
+lancer le 
+
+```
+./migrate-db.sh
+
+```
+
+et après 
+
+```
+php artisan make:migration:pivot examen group
+```
+mettre examen à la place de examan dans le pivot
+
+```
+php artisan migrate
+
+```
