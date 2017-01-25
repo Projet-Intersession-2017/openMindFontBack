@@ -58,6 +58,8 @@ class QuizController extends Controller
             {
                 array_push($tabQuestionReponse, $questionsList[$i]);
                 array_push($tabQuestionReponse, $reponsesList[$i]);
+                array_push($tabQuestionReponse, $noteList[$i]);
+                array_push($tabQuestionReponse, $idChoiceList[$i]);
             }
             else
             {
@@ -66,15 +68,16 @@ class QuizController extends Controller
                  {
                      array_push($tabQuestionReponse, $questionsList[$i]);
                      array_push($tabQuestionReponse, $value);
+                     array_push($tabQuestionReponse, $noteList[$i]);
+                     array_push($tabQuestionReponse, $idChoiceList[$i]);
                  }
             } 
         }
 
-        for ($j = 0; $j < $tabQuestionReponse; $j = $j+2)
+        $insertVal;
+        for ($j = 0; $j < count($tabQuestionReponse); $j = $j+4)
         {
-            $this->repoQuiz->setUserAnswers($idCandidat, $idExamen, $idSurvey, $tabQuestionReponse[$j], $tabQuestionReponse[$j+1], $noteList[$j], $idChoiceList[$j]);
+            $insertVal = $this->repoQuiz->setUserAnswers($idCandidat, $idExamen, $idSurvey, $tabQuestionReponse[$j], $tabQuestionReponse[$j+1], $tabQuestionReponse[$j+2], $tabQuestionReponse[$j+3]);
         }
-        
-        return 0;
     }
 }

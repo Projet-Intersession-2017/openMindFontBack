@@ -30,7 +30,6 @@
                     data : "tabQuestion=" + tabQuestion + "&tabReponse=" + tabReponse + "&tabNoteSurvey=" + tabNote + "&tabChoiceId=" + tabIdChoice,
                     dataType : 'html',
                     success: function(data) {
-                        alert(data); 
                         alert('Votre Quizz a bien été enregistré'); 
                     },
                     error: function() {
@@ -78,8 +77,6 @@
                 reponseI=reponseInput;
                 tabReponse.push(reponseI);
             }
-            alert(tabIdChoice)
-            alert(tabReponse)
             $('.TypeCheckbox').prop("checked", false);
         }
     </script>
@@ -102,12 +99,12 @@
 					    		} 
 					    		if ($value->type_id=="1" && $labelQuestion==$value->Intitule ){
 					    			echo'<input type="checkbox" class="TypeCheckbox"><span class="paragrapheReponse">'.$value->choix.'</span><br>';
-					    			echo'<input type="text" class="idChoice" value="'. $value->idChoix.'">';
+					    			echo'<input type="hidden" class="idChoice" value="'. $value->idChoix.'">';
 					    			echo'<input type="hidden" class="idNote" value="'. $value->note.'">';
 					    			//array_push($reponses, $value->reponse);
 					    		}else{
 					    			 echo'<input type="text" class="inputReponse">';
-					    			 echo'<input type="text" class="idChoice" value="'. $value->idChoix.'">';
+					    			 echo'<input type="hidden" class="idChoice" value="'. $value->idChoix.'">';
 					    			 echo'<input type="hidden" class="idNote" value="'. $value->note.'">';
 					    		} 
 					    	}
