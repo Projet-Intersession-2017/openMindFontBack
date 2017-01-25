@@ -47,7 +47,6 @@
                 <a href="#"><i class="fa fa-flag-checkered"></i><span>Gestion Résultat QCM</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                         <li><a href="{{ url('intra/useranswer') }}"><i class="fa fa-circle-o"></i> <span>Résultat</span></a></li>
-
                 </ul>
               </li>
 		<li class="treeview">
@@ -69,14 +68,14 @@
 		    <a href="#"><i class="fa fa-question"></i> <span>Examen</span><i class="fa fa-angle-left pull-right"></i></a>
 		    <ul class="treeview-menu">
 		       @foreach(Auth::user()->group->examens as $key => $examen )
-		       <li>
-		          <a href="{{ url(config('backpack.base.route_prefix', 'intra').'/URL?id='.$examen->id) }}">
-		            <i class="fa fa-circle-o"></i>  
-		            <span>{{ $examen->label}}
-		            </span>
-		          </a>
-		        </li>
-		        @endforeach
+             <li>
+                <a href="{{ url(config('backpack.base.route_prefix', 'intra').'/candidat/'.Auth::user()->id.'/examen/'.$examen->id) }}">
+                  <i class="fa fa-circle-o"></i>  
+                  <span>{{ $examen->label}}
+                  </span>
+                </a>
+              </li>
+            @endforeach
 		    </ul>
 		  @endif
 		</li>   
