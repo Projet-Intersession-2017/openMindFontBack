@@ -54,24 +54,10 @@ class QuizController extends Controller
         $idChoiceList = explode(",", $request->tabChoiceId);
         for ($i = 0; $i < count($reponsesList); $i++)
         {
-            if(strpos($reponsesList[$i], "||") == false)
-            {
-                array_push($tabQuestionReponse, $questionsList[$i]);
-                array_push($tabQuestionReponse, $reponsesList[$i]);
-                array_push($tabQuestionReponse, $noteList[$i]);
-                array_push($tabQuestionReponse, $idChoiceList[$i]);
-            }
-            else
-            {
-                 $responseCheckBox = explode("||", $reponsesList[$i]);
-                 foreach ($responseCheckBox as $value) 
-                 {
-                     array_push($tabQuestionReponse, $questionsList[$i]);
-                     array_push($tabQuestionReponse, $value);
-                     array_push($tabQuestionReponse, $noteList[$i]);
-                     array_push($tabQuestionReponse, $idChoiceList[$i]);
-                 }
-            } 
+            array_push($tabQuestionReponse, $questionsList[$i]);
+            array_push($tabQuestionReponse, $reponsesList[$i]);
+            array_push($tabQuestionReponse, $noteList[$i]);
+            array_push($tabQuestionReponse, $idChoiceList[$i]);
         }
 
         $insertVal;

@@ -39,6 +39,7 @@
             });
         });
         function stockerReponse(obj){
+        	var reponseC='';
             var tabAvant = $(obj).closest('div').attr('id');
             var note='';
             $(obj).closest('div').find('.idNote').each(function() {
@@ -56,24 +57,27 @@
             $('#'+tabAvant).hide();
             $('#'+tabApres).show();
             var reponseCheck = $(obj).closest('div').children().eq(1).attr('class');
-			tabQuestion.push(idQuestion);
+			
 			tabNote.push(note);
-			tabIdChoice.push(idChoice);
+			tabIdChoice.push(idChoice); 
             if (reponseCheck=='TypeCheckbox'){
                 var reponseC='';
-                $('.TypeCheckbox').each(function() {
+                $(obj).closest('div').find('.TypeCheckbox').each(function() {
                     if ($(this).is(":checked")){
-                        reponseC += $(this).next('span').text()+'||';
+                    	tabQuestion.push(idQuestion);
+                        reponseC = $(this).next('span').text();
+                        tabReponse.push(reponseC);
                     }else{
-                    	reponseC += ' '+'||';
+                    	tabQuestion.push(idQuestion);
+                    	reponseC = '""';
+                    	tabReponse.push(reponseC);
                     }
                 });
-                reponseC= reponseC.substring(0,reponseC.length-2);
-                tabReponse.push(reponseC);
             }
             var reponseInput = $(obj).closest('div').find('.inputReponse').val();
             if (reponseInput!=undefined){
                 reponseI=reponseInput;
+                tabQuestion.push(idQuestion);
                 tabReponse.push(reponseI);
             }
             $('.TypeCheckbox').prop("checked", false);
