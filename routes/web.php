@@ -50,6 +50,8 @@ Route::group(['prefix' => 'intra', 'middleware' => 'admin'], function()
     CRUD::resource('type', 'Admin\TypeCrudController');
     CRUD::resource('choice', 'Admin\ChoiceCrudController');
     CRUD::resource('useranswer', 'Admin\UserAnswerCrudController');
-  
+    CRUD::resource('listfaq', 'Admin\GroupechatCrudController');
+    CRUD::resource('faq', 'Admin\ChatCrudController');
+
   // [...] other routes
 });

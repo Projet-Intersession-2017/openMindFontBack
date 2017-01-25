@@ -70,7 +70,7 @@ class User extends Model
     }
     public function tutorGroupChat()
     {
-        return $this->hasMany('App\Models\Groupchat');
+        return $this->hasOne('App\Models\Groupchat');
     }
 
     /*
