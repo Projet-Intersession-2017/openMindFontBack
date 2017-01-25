@@ -1,7 +1,7 @@
 @extends('vendor.backpack.base.dashboard')
 
 @section('header')
-<div class="col-lg-12 titreGestionUsers">
+<div class="col-lg-12 titreListeExamens">
 	Liste des examens
 </div>
 @endsection
@@ -15,7 +15,7 @@
 		 		echo '<div class="row">';
 		 	}
 		 	echo '<div class="col-md-4">';
-		 	echo '<a href="/intra/examen/'. $value->id .'"><button class="btn btn-primary">'.$value->label.'</button></a>';
+		 	echo '<a href="/intra/candidat/'.Auth::user()->id.'/examen/'. $value->id .'"><button class="btn btn-primary">'.$value->label.'</button></a>';
 		 	echo'</div>';
 		 	$i++;
 		 	if ($i==3){

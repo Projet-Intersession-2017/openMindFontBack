@@ -53,7 +53,7 @@
             
             <li><a href="{{ url(config('backpack.base.route_prefix', 'intra').'/log') }}"><i class="fa fa-terminal"></i><span> Manage Logs</span></a></li>
           @endif
-          @if("Etidiant" ==  Auth::user()->role->name)
+          @if("Etudiant" ==  Auth::user()->role->name)
             <!-- ======================================= -->
             <li class="header">{{ trans('backpack::base.user') }}</li>
             <li class="treeview">
@@ -63,7 +63,7 @@
               		   <li><a href="{{ url('intra/listeexamen') }}"><i class="fa fa-circle-o"></i> <span>Repondre aux Quiz</span></a></li>
                    @foreach(Auth::user()->group->examens as $key => $examen )
                    <li>
-                      <a href="{{ url(config('backpack.base.route_prefix', 'intra').'/URL?id='.$examen->id) }}">
+                      <a href="{{ url(config('backpack.base.route_prefix', 'intra').'/candidat/examen/'.$examen->id) }}">
                         <i class="fa fa-circle-o"></i>  
                         <span>{{ $examen->label}}
                         </span>

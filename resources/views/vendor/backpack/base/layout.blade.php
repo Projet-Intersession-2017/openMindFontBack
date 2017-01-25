@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/') }}/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="/css/quiz.css">
 
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/') }}/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins folder instead of downloading all of them to reduce the load. -->
@@ -110,44 +111,7 @@
     <script src="{{ asset('vendor/adminlte') }}/plugins/fastclick/fastclick.js"></script>
     <script src="{{ asset('vendor/adminlte') }}/dist/js/app.min.js"></script>
 
-      <!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
-      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-        $( document ).ready(function() {
-            var reponseTotal = [];
-            $('.question').hide();
-            $('#tabs-1').show();
-            $('.TypeCheckbox').prop("checked", false);
-            $('.btnSuivant').click(function() {
-                var reponse = [];
-                var tabAvant = $(this).closest('div').attr('id');
-                var idQuestionSplit = tabAvant.split('-');
-                idQuestion=idQuestionSplit[1];
-                var tabApres = $(this).closest('div').next().attr('id');
-                $('#'+tabAvant).hide();
-                $('#'+tabApres).show();
-                var reponseCheck = $(this).closest('div').children().eq(1).attr('class');
-                if (reponseCheck=='TypeCheckbox'){
-                    var reponseC='';
-                    $('.TypeCheckbox').each(function() {
-                        if ($(this).is(":checked")){
-                            reponseC += $(this).next('span').text()+'||';
-                        }
-                    });
-                    reponseC= reponseC.substring(0,reponseC.length-2);
-                    reponse.push('Question ' + idQuestion +' Reponse '+ reponseC);
-                }
-                var reponseInput = $(this).closest('div').find('.inputReponse').val();
-                if (reponseInput!=undefined){
-                    reponseI=reponseInput;
-                    reponse.push('Question ' + idQuestion +' Reponse '+ reponseI);
-                }
-                reponseTotal.push(reponse);
-                alert(reponseTotal)
-                $('.TypeCheckbox').prop("checked", false);
-            });
-        });
-    </script>
+ 
 
     <!-- page script -->
     <script type="text/javascript">
