@@ -15,7 +15,7 @@ class CreateChoicesTable extends Migration
     {
         Schema::create('choice', function (Blueprint $table) {
             $table->increments('id');
-            $table->boolean('response');
+            $table->string('response');
             $table->string('label');
             $table->dateTime('created_at');
             $table->dateTime('updated_at');

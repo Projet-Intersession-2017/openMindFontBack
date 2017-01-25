@@ -8,6 +8,9 @@ use Backpack\CRUD\app\Http\Controllers\CrudController;
 use App\Http\Requests\ChoiceRequest as StoreRequest;
 use App\Http\Requests\ChoiceRequest as UpdateRequest;
 
+use App\Models\Question;
+use App\Models\Type;
+
 class ChoiceCrudController extends CrudController
 {
 
@@ -31,6 +34,57 @@ class ChoiceCrudController extends CrudController
 
         $this->crud->setFromDb();
 
+
+
+        $this->crud->addField([
+              // Custom Field
+              'name' => 'question_id',
+              'label' => 'Question',
+              'type' => 'choice_question',
+              'placeholder' => '-',
+              'question_model' => 'App\Models\Question',
+        ]);
+
+       $this->crud->setColumnDetails('question_id', [
+           // 1-n relationship
+           'label' => "Question", // Table column heading
+           'type' => "select",
+           'name' => 'question_id', // the column that contains the ID of that connected entity;
+           'entity' => 'question', // the method that defines the relationship in your Model
+           'attribute' => "label", // foreign key attribute that is shown to user
+           'model' => "App\Models\Question", // foreign key model
+        ]);
+        $this->crud->addColumn([
+           // 1-n relationship
+           'label' => "Type", // Table column heading
+           'type' => "select",
+           'name' => 'question_id', // the column that contains the ID of that connected entity;
+           'entity' => 'question', // the method that defines the relationship in your Model
+           'attribute' => "type", 
+            'columns' => [
+                    'name' => 'label'
+    ],// foreign key attribute that is shown to user
+           'model' => "App\Models\Question", // foreign key model
+        ]);
+       // // var_dump($this->request);
+       // $typeId = Question::find($this->data['question_id'])->get('type_id');
+       // $type = Type::find($typeId);
+
+       // if ('Checkbox' == $type->label ) {
+
+
+            $this->crud->addField([
+                'name'        => 'response',
+                'label'       => 'Réponse',
+                'type'        => 'radio',
+                'options'     => [
+                    0 => "Non",
+                    1 => "Oui"
+                ]
+            ]);
+        // } else {
+
+        // }
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');

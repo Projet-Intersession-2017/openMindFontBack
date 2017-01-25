@@ -57,4 +57,22 @@ class User extends Authenticatable
     {
         return (strtolower($need_role)==strtolower($this->have_role->name)) ? true : false;
     }
+
+
+
+    /**
+     * The roles that belong to the user.
+     */
+    public function group()
+    {
+        return $this->belongsTo('App\Models\Group');
+    }
+
+
+    private function getUserGroup()
+    {
+        return $this->group()->getResults();
+    }
+
+    
 }

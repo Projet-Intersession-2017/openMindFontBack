@@ -42,6 +42,13 @@ class Group extends Model
     {
         return $this->hasMany('App\User');
     }
+
+
+
+    // public function examens()
+    // {
+    //     return $this->belongsToMany('App\Models\Examen', 'examen_group');
+    // }
     /*
 	|--------------------------------------------------------------------------
 	| SCOPES

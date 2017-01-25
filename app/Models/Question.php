@@ -18,7 +18,7 @@ class Question extends Model
     protected $table = 'question';
     //protected $primaryKey = 'id';
     // public $timestamps = false;
-    // protected $guarded = ['id'];
+    protected $guarded = ['id'];
     // protected $fillable = [];
     // protected $hidden = [];
     // protected $dates = [];
@@ -38,9 +38,9 @@ class Question extends Model
     /**
      * The roles that belong to the user.
      */
-    public function type()
+    public function type ()
     {
-        return $this->hasOne('App\Models\TypeQuestion');
+        return $this->belongsTo('App\Models\Type');
     }
 
     /**

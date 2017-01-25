@@ -31,7 +31,7 @@ class RoleTableSeeder extends Seeder{
         ]);
         Role::create([
             'id'            => 5,
-            'name'          => 'Etidiant',
+            'name'          => 'Etudiant',
             'description'   => 'A standard user that can have a licence assigned to them. No administrative features.'
         ]);
         Role::create([

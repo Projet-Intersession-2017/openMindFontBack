@@ -18,13 +18,13 @@ class Examen extends Model
     protected $table = 'examen';
     //protected $primaryKey = 'id';
     // public $timestamps = false;
-    // protected $guarded = ['id'];
-    protected $fillable = ['label', 'validate', 'user_id'];
+    protected $guarded = ['id'];
+    // protected $fillable = ['label', 'validate', 'user_id','groups'];
     // protected $hidden = [];
     // protected $dates = [];
 
     /*
-	|--------------------------------------------------------------------------
+	|--------------------------------------------------    ------------------------
 	| FUNCTIONS
 	|--------------------------------------------------------------------------
 	*/
@@ -57,6 +57,11 @@ class Examen extends Model
         return $this->hasOne('App\Models\User');
     }
 
+
+    public function groups()
+    {
+        return $this->belongsToMany('App\Models\Group', 'examen_group');
+    }
 
 
     /*

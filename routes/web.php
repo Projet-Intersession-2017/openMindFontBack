@@ -21,6 +21,31 @@ Route::get('/presentation', function () {
     return view('presentation');
 });
 
+/**********Routes pour les examens des étudiants *************/
+Route::get('/intra/listeexamen', [
+	'middleware' => ['auth' /*, 'roles'*/], // A 'roles' middleware must be specified
+    'uses' => 'Admin\QuizController@listeexamen',
+    //'roles' => ['Etudiant']
+]);
+Route::get('/intra/candidat/{idCandidat}/examen/{idExamen}', [
+	'middleware' => ['auth' /*, 'roles'*/], // A 'roles' middleware must be specified
+    'uses' => 'Admin\QuizController@listesurvey',
+    //'roles' => ['Etudiant']
+]);
+Route::get('/intra/candidat/{idCandidat}/examen/{idExamen}/survey/{idSurvey}', [
+	'middleware' => ['auth' /*, 'roles'*/], // A 'roles' middleware must be specified
+    'uses' => 'Admin\QuizController@listequestions',
+    //'roles' => ['Etudiant']
+]);
+Route::post('/intra/candidat/{idCandidat}/examen/{idExamen}/survey/{idSurvey}/sendresults', [
+	'middleware' => ['auth' /*, 'roles'*/], // A 'roles' middleware must be specified
+    'uses' => 'Admin\QuizController@sendresults',
+    //'roles' => ['Etudiant']
+]);
+
+
+
+
 Route::get('user/{user}', [
     'middleware' => ['auth', 'roles'], // A 'roles' middleware must be specified
     'uses' => 'UserController@index',
@@ -44,8 +69,11 @@ Route::group(['prefix' => 'intra', 'middleware' => 'admin'], function()
     CRUD::resource('category', 'Admin\CategoryCrudController');
     CRUD::resource('survey', 'Admin\QuestionnaireCrudController');
     CRUD::resource('question', 'Admin\QuestionCrudController');
-    CRUD::resource('typequestion', 'Admin\TypeQuestionCrudController');
+    CRUD::resource('type', 'Admin\TypeCrudController');
     CRUD::resource('choice', 'Admin\ChoiceCrudController');
-  
+    CRUD::resource('useranswer', 'Admin\UserAnswerCrudController');
+    CRUD::resource('listfaq', 'Admin\GroupechatCrudController');
+    CRUD::resource('faq', 'Admin\ChatCrudController');
+
   // [...] other routes
 });

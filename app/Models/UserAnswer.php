@@ -18,8 +18,8 @@ class UserAnswer extends Model
     protected $table = 'useranswer';
     //protected $primaryKey = 'id';
     // public $timestamps = false;
-    // protected $guarded = ['id'];
-    protected $fillable = ['note_user', 'note_max'];
+    protected $guarded = ['id'];
+    // protected $fillable = ['note_user', 'note_max'];
     // protected $hidden = [];
     // protected $dates = [];
 

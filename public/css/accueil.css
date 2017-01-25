@@ -48,8 +48,6 @@ h3{
 	margin-top: 20px;
 }
 .blocMenu{
-	background-color: black;
-	border-radius: 5px;
 	float:right;
 }
 .champsMenu:hover{
@@ -58,5 +56,34 @@ h3{
 	color : #c03b2b;
 }
 .champsMenu{
-	color : #c03b2b;
+	color : white;
+}
+.presentationEntete{
+	color : white;
+	text-align: center;
+}
+.margeDiv{
+	margin-top: 60px;
+}
+#PresentationAccueil{
+	/*background-color: rgba(44, 62, 80, 0.2);*/
+}
+.paragraphePlan{
+	color : black;
+	font-size: 40px;
+}
+.paragrapheContact, .inputReponse{
+	color:black;
+}
+.imageMarge, .paragrapheMarge{
+	margin-top: 40px;
+}
+.paragrapheObjectif, .paragrapheEvolutions{
+	text-align : justify;
+	color : black;
+	font-size: 30px;
+}
+.paragrapheQuestion, .paragrapheReponse{
+	color: black;
+	font-size: 40px;
 }

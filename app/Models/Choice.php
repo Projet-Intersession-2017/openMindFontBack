@@ -18,7 +18,7 @@ class Choice extends Model
     protected $table = 'choice';
     //protected $primaryKey = 'id';
     // public $timestamps = false;
-    // protected $guarded = ['id'];
+    protected $guarded = ['id'];
     // protected $fillable = [];
     // protected $hidden = [];
     // protected $dates = [];
@@ -34,6 +34,11 @@ class Choice extends Model
 	| RELATIONS
 	|--------------------------------------------------------------------------
 	*/
+    public function question()
+    {
+        return $this->belongsTo('App\Models\Question');
+    }
+
 
     /*
 	|--------------------------------------------------------------------------

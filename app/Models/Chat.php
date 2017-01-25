@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
 
-class TypeQuestion extends Model
+class Chat extends Model
 {
     use CrudTrait;
 
@@ -15,10 +15,10 @@ class TypeQuestion extends Model
 	|--------------------------------------------------------------------------
 	*/
 
-    protected $table = 'type';
+    protected $table = 'chat';
     //protected $primaryKey = 'id';
     // public $timestamps = false;
-    // protected $guarded = ['id'];
+    protected $guarded = ['id'];
     // protected $fillable = [];
     // protected $hidden = [];
     // protected $dates = [];
@@ -34,6 +34,14 @@ class TypeQuestion extends Model
 	| RELATIONS
 	|--------------------------------------------------------------------------
 	*/
+	public function groupchat()
+    {
+        return $this->belongsTo('App\Models\Groupechat');
+    }
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
 
     /*
 	|--------------------------------------------------------------------------

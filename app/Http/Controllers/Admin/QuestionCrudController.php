@@ -31,6 +31,56 @@ class QuestionCrudController extends CrudController
 
         $this->crud->setFromDb();
 
+        $this->crud->addField([
+            'label' => 'Questionnaire',
+            'type' => 'select2',
+            'name' => 'survey_id', // the db column for the foreign key
+            'entity' => 'survey', // the method that defines the relationship in your Model
+            'attribute' => 'labelle', // foreign key attribute that is shown to user
+            'model' => 'App\Models\Questionnaire' // foreign key model
+        ]);
+
+
+        $this->crud->addField([
+            'label' => 'Type de question',
+            'type' => 'select2',
+            'name' => 'type_id', // the db column for the foreign key
+            'entity' => 'type', // the method that defines the relationship in your Model
+            'attribute' => 'label', // foreign key attribute that is shown to user
+            'model' => 'App\Models\Type' // foreign key model
+        ]);
+
+
+        $this->crud->addField([
+            'label' => 'Choices',
+            'type' => 'choices',
+            'name' => 'choice_id', // the db column for the foreign key
+            'entity' => 'type', // the method that defines the relationship in your Model
+            'attribute' => 'label', // foreign key attribute that is shown to user
+            'model' => 'App\Models\Type' // foreign key model
+        ]);
+
+
+       $this->crud->setColumnDetails('survey_id', [
+           // 1-n relationship
+           'label' => "Questionnaire", // Table column heading
+           'type' => "select",
+           'name' => 'survey_id', // the column that contains the ID of that connected entity;
+           'entity' => 'survey', // the method that defines the relationship in your Model
+           'attribute' => "labelle", // foreign key attribute that is shown to user
+           'model' => "App\Models\Questionnaire", // foreign key model
+        ]);
+
+       $this->crud->setColumnDetails('type_id', [
+           // 1-n relationship
+           'label' => "Type", // Table column heading
+           'type' => "select",
+           'name' => 'type_id', // the column that contains the ID of that connected entity;
+           'entity' => 'type', // the method that defines the relationship in your Model
+           'attribute' => "label", // foreign key attribute that is shown to user
+           'model' => "App\Models\Type", // foreign key model
+        ]);
+
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
