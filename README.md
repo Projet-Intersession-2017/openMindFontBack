@@ -94,12 +94,14 @@ git pull origin rc ou branch
 ./deploy.sh
 ```
 
+Lancer le
+
+```
+./migrate-db.sh
+```
+
 Vérifier que tout fonctionne :
 
 ```
 http://192.168.1.198/index.php
 ```
-
-# troubleshooting
-
-- Seed not found ? `composer dump-autoload`
