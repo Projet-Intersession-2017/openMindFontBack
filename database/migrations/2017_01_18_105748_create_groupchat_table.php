@@ -16,6 +16,7 @@ class CreateGroupchatTable extends Migration
         Schema::create('groupchat', function (Blueprint $table) {
             $table->increments('id');
             $table->string('label');
+            $table->boolean('activate');
             $table->dateTime('created_at');
             $table->dateTime('updated_at');
             $table->integer('user_id')->unsigned();

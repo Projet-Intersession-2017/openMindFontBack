@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
 
-class User extends Model
+class Chat extends Model
 {
     use CrudTrait;
 
@@ -15,12 +15,11 @@ class User extends Model
 	|--------------------------------------------------------------------------
 	*/
 
-    protected $table = 'users';
+    protected $table = 'chat';
     //protected $primaryKey = 'id';
     // public $timestamps = false;
-    // protected $guarded = ['id'];
-    // protected $guarded = ['id', 'remember_token'];
-    protected $fillable = ['name', 'email', 'password', 'role_id', 'group_id', 'coordinate_id', 'spam'];
+    protected $guarded = ['id'];
+    // protected $fillable = [];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -35,42 +34,9 @@ class User extends Model
 	| RELATIONS
 	|--------------------------------------------------------------------------
 	*/
-
-
-
-    /**
-     * The roles that belong to the user.
-     */
-    public function role()
+	public function groupchat()
     {
-        return $this->belongsTo('App\Role');
-    }
-
-
-    /**
-     * The users that belong to the role.
-     */
-    public function coordinate()
-    {
-        return $this->belongsTo('App\Models\Coordonate');
-    }
-
-
-    /**
-     * The roles that belong to the user.
-     */
-    public function group()
-    {
-        return $this->belongsTo('App\Models\Group');
-    }
-
-    public function tutorExam()
-    {
-        return $this->hasMany('App\Examen');
-    }
-    public function tutorGroupChat()
-    {
-        return $this->hasMany('App\Models\Groupchat');
+        return $this->belongsTo('App\Models\Groupchat');
     }
 
     /*
