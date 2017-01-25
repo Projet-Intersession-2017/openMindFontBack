@@ -69,8 +69,6 @@ class QuizController extends Controller
         }
 
         var_dump($tabQuestionReponse);
-
-
         for ($j = 0; $j < $tabQuestionReponse; $j = $j+2)
         {
             $this->repoQuiz->setUserAnswers($idCandidat, $idExamen, $idSurvey, $tabQuestionReponse[$j], $tabQuestionReponse[$j+1]);

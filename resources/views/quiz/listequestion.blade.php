@@ -13,6 +13,8 @@
     <script>
     	var tabReponse = [];
     	var tabQuestion=[];
+    	var tabNote = [];
+    	var tabIdChoice=[];
         $( document ).ready(function() {
             $('.question').hide();
             $('#tabs-1').show();
@@ -29,6 +31,7 @@
                     dataType : 'html',
                     success: function(data) {
                         alert(data); 
+                        alert('Votre Quizz a bien été enregistré'); 
                     },
                     error: function() {
                         alert('La requête n\'a pas abouti'); 
@@ -37,8 +40,9 @@
             });
         });
         function stockerReponse(obj){
-        	
             var tabAvant = $(obj).closest('div').attr('id');
+            var note = $(obj).closest('div').find('.idNote').val();
+            var idChoice = $(obj).closest('div').find('.idChoice').val()
             var idQuestionSplit = tabAvant.split('-');
             idQuestion=idQuestionSplit[1];
             var tabApres = $(obj).closest('div').next().attr('id');
@@ -46,6 +50,8 @@
             $('#'+tabApres).show();
             var reponseCheck = $(obj).closest('div').children().eq(1).attr('class');
 			tabQuestion.push(idQuestion);
+			tabNote.push(note);
+			tabIdChoice.push(idChoice);
             if (reponseCheck=='TypeCheckbox'){
                 var reponseC='';
                 $('.TypeCheckbox').each(function() {
@@ -61,16 +67,10 @@
                 reponseI=reponseInput;
                 tabReponse.push(reponseI);
             }
-            alert(tabQuestion)
-            alert(tabReponse)
+            alert(tabIdChoice)
             $('.TypeCheckbox').prop("checked", false);
         }
     </script>
-
-
-
-
-
 <div class="col-lg-12">
 	<div class="row">
 		<div class="row" class="blocContact">
@@ -86,17 +86,20 @@
 					    			 	echo '<button type="button" class="btn btn-primary btnSuivant">Suivant</button></div>';
 					    			 echo'<div id="tabs-'.$value->id.'" class="question">';
 					    			 echo'<p class="paragrapheQuestion">'. $value->Intitule.'</p>';
+					    			 echo'<input type="text" class="idNote" value="'. $value->note.'">';
 					    			 $labelQuestion=$value->Intitule;
 					    		} 
 					    		if ($value->type_id=="1" && $labelQuestion==$value->Intitule ){
 					    			echo'<input type="checkbox" class="TypeCheckbox"><span class="paragrapheReponse">'.$value->choix.'</span><br>';
+					    			if ($value->reponse=='true')
+					    				echo'<input type="text" class="idChoice" value="'. $value->idChoix2.'">';
 					    			//array_push($reponses, $value->reponse);
 					    		}else{
 					    			 echo'<input type="text" class="inputReponse">';
+					    			 echo'<input type="text" class="idChoice" value="'. $value->idChoix2.'">';
 					    		} 
 					    	}
-					    	echo '<button type="button" class="btn btn-primary btnTerminer">Terminer</button></div>';
-					    		
+					    	echo '<button type="button" class="btn btn-primary btnTerminer">Terminer</button></div>';	
 					    ?> 
 				      </div>
 				    </div>

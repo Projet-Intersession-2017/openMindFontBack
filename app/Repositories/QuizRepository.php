@@ -39,7 +39,7 @@ class QuizRepository
 
 	public function getQuestionList($idSurvey)
 	{
-		$questionList =DB::select("SELECT question.id, question.label AS Intitule, question.note, question.type_id, choice.response AS reponse, choice.label AS choix
+		$questionList =DB::select("SELECT question.id, question.label AS Intitule, question.note, question.type_id, choice.response AS reponse, choice.label AS choix, choice.id AS idChoix2
 				FROM question
 				INNER JOIN choice ON question.id = choice.question_id
 				WHERE question.survey_id = " . $idSurvey);
@@ -49,7 +49,7 @@ class QuizRepository
 	public function setUserAnswers($idCandidat, $idExamen, $idSurvey, $idQuestion, $valueReponse)
 	{
 		$questionList = DB::insert("INSERT INTO useranswer (user_id, examen_id, survey_id, question_id, answer_value
- 			VALUES (".$idCandidat.",".$idExamen.",".$idSurvey.",".$idQuestion.",".$valueReponse.")");
+ 			VALUES (".$idCandidat.",".$idExamen.",".$idSurvey.",".$idQuestion.",'".$valueReponse."')");
 		return true;
 	}
     
