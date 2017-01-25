@@ -49,6 +49,13 @@
 
               </ul>
             </li>
+              <li class="treeview">
+                  <a href="#"><i class="fa fa-weixin"></i><span>FAQ</span> <i class="fa fa-angle-left pull-right"></i></a>
+                  <ul class="treeview-menu">
+                      <li><a href="{{ url('intra/listfaq') }}"><i class="fa fa-circle-o"></i> <span>Liste FAQ</span></a></li>
+                      <li><a href="{{ url('intra/faq') }}"><i class="fa fa-circle-o"></i> <span>les solutions</span></a></li>
+                  </ul>
+              </li>
             <li><a href="{{ url(config('backpack.base.route_prefix', 'intra') . '/elfinder') }}"><i class="fa fa-files-o"></i> <span>File manager</span></a></li>
             
             <li><a href="{{ url(config('backpack.base.route_prefix', 'intra').'/log') }}"><i class="fa fa-terminal"></i><span> Manage Logs</span></a></li>
@@ -72,6 +79,13 @@
                 </ul>
               @endif
             </li>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-weixin"></i><span>FAQ</span> <i class="fa fa-angle-left pull-right"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{ url('intra/listfaq') }}"><i class="fa fa-circle-o"></i> <span>Liste FAQ</span></a></li>
+                        <li><a href="{{ url('intra/faq') }}"><i class="fa fa-circle-o"></i> <span>les solutions</span></a></li>
+                    </ul>
+                </li>
           @endif    
             <li>
               <a href="{{ url(config('backpack.base.route_prefix', 'intra').'/logout') }}">

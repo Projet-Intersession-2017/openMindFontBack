@@ -1,6 +1,8 @@
 #!/bin/bash
 
 php artisan migrate --seed
+``
+
 php artisan db:seed --class=GroupTableSeeder
 php artisan db:seed --class=RoleTableSeeder
 php artisan db:seed --class=CategoryTableSeeder

@@ -36,7 +36,11 @@ class Chat extends Model
 	*/
 	public function groupchat()
     {
-        return $this->belongsTo('App\Models\Groupchat');
+        return $this->belongsTo('App\Models\Groupechat');
+    }
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
     }
 
     /*

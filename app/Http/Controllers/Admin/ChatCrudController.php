@@ -20,8 +20,8 @@ class ChatCrudController extends CrudController
 		|--------------------------------------------------------------------------
 		*/
         $this->crud->setModel("App\Models\Chat");
-        $this->crud->setRoute("admin/chat");
-        $this->crud->setEntityNameStrings('chat', 'chats');
+        $this->crud->setRoute("intra/faq");
+        $this->crud->setEntityNameStrings('solution FAQ', 'Les solutions FAQ');
 
         /*
 		|--------------------------------------------------------------------------
@@ -31,6 +31,47 @@ class ChatCrudController extends CrudController
 
         $this->crud->setFromDb();
 
+        $this->crud->addField(
+            [       // Select2Multiple = n-n relationship (with pivot table)
+                'label' => "Groups",
+                'type' => 'select2',
+                'name' => 'groupchat_id', // the method that defines the relationship in your Model
+                'entity' => 'groupchat', // the method that defines the relationship in your Model
+                'attribute' => 'label', // foreign key attribute that is shown to user
+                'model' => "App\Models\Groupechat", // foreign key model
+            ]
+        );
+
+        $this->crud->addField(
+            [       // Select2Multiple = n-n relationship (with pivot table)
+                'label' => "Users",
+                'type' => 'select2',
+                'name' => 'user_id', // the method that defines the relationship in your Model
+                'entity' => 'users', // the method that defines the  relationship in your Model
+                'attribute' => 'name', // foreign key attribute that is shown to user
+                'model' => "App\Models\User", // foreign key model
+            ]
+        );
+
+        $this->crud->setColumnDetails('user_id', [
+            // 1-n relationship
+            'label' => "Tutor", // Table column heading
+            'type' => "select",
+            'name' => 'user_id', // the column that contains the ID of that connected entity;
+            'entity' => 'user', // the method that defines the relationship in your Model
+            'attribute' => "name", // foreign key attribute that is shown to user
+            'model' => "App\Models\User", // foreign key model
+        ]);
+
+        $this->crud->setColumnDetails('groupchat_id', [
+            // 1-n relationship
+            'label' => "Groupe", // Table column heading
+            'type' => "select",
+            'name' => 'groupchat_id', // the column that contains the ID of that connected entity;
+            'entity' => 'groupchat', // the method that defines the relationship in your Model
+            'attribute' => "label", // foreign key attribute that is shown to user
+            'model' => "App\Models\Groupechat", // foreign key model
+        ]);
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
