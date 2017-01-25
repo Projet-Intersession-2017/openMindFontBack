@@ -16,7 +16,7 @@ class ExamenTableSeeder extends Seeder
         if (App::environment() === 'production') {
             exit('I just stopped you getting fired. Love, Amo.');
         }
-        DB::table('examen')->truncate();
+        DB::table('examen')->delete();
         Examen::create([
             'id'            => 1,
             'label'          => 'Php dev8',

@@ -16,7 +16,7 @@ class GroupTableSeeder extends Seeder
         if (App::environment() === 'production') {
             exit('I just stopped you getting fired. Love, Amo.');
         }
-        DB::table('group')->truncate();
+        DB::table('group')->delete();
         Group::create([
             'id'            => 1,
             'name'          => 'dev1',
