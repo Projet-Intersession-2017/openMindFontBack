@@ -53,10 +53,10 @@ class Group extends Model
 
 
 
-    // public function examens()
-    // {
-    //     return $this->belongsToMany('App\Models\Examen', 'examen_group');
-    // }
+    public function examens()
+    {
+         return $this->belongsToMany('App\Models\Examen', 'examen_group');
+    }
     /*
 	|--------------------------------------------------------------------------
 	| SCOPES

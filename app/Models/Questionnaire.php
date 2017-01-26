@@ -60,6 +60,10 @@ class Questionnaire extends Model
     {
         return $this->hasMany('App\Models\Question');
     }
+        public function useranswer()
+    {
+        return $this->hasOne('App\Models\UserAnswer');
+    }
     /*
 	|--------------------------------------------------------------------------
 	| SCOPES

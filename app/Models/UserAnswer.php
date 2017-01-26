@@ -40,35 +40,75 @@ class UserAnswer extends Model
      */
     public function question()
     {
-        return $this->hasOne('App\Models\Question');
+        return $this->belongsTo('App\Models\Question');
     }
     /**
      * The users that belong to the role.
      */
     public function choice()
     {
-        return $this->hasOne('App\Models\Choice');
+        return $this->belongsTo('App\Models\Choice');
     }
     /**
      * The users that belong to the role.
      */
     public function survey()
     {
-        return $this->hasOne('App\Models\Questionnaire');
+        return $this->belongsTo('App\Models\Questionnaire');
     }
     /**
      * The users that belong to the role.
      */
     public function examen()
     {
-        return $this->hasOne('App\Models\Examen');
+        return $this->belongsTo('App\Models\Examen');
     }
     /**
      * The tutor that reply
      */
     public function user()
     {
-        return $this->hasOne('App\Models\User');
+        return $this->belongsTo('App\Models\User');
+    }
+
+    public function getQuestionLabel()
+    {
+        return $this->question;
+    }
+
+    public function getUserName()
+    {
+        return $this->user;
+    }
+
+    public function getExamenLabel()
+    {
+        return $this->examen;
+    }
+
+    public function getSurveyLabel()
+    {
+        return $this->survey;
+    }
+
+    public function getChoiceLabel()
+    {
+        return $this->choice;
+    }
+
+
+    public function getCorrection()
+    {
+        $reponseCorrection = $this->choice->response;
+        $reponseEtudiant = $this->getAttribute('answer_value');
+        if($reponseCorrection != $reponseEtudiant)
+        {
+            return "FAUX";
+        }
+        else 
+        {
+            return "CORRECT";
+        }
     }
 
     /*

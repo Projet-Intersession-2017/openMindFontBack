@@ -111,6 +111,90 @@ class UserAnswerCrudController extends CrudController
              ], // extra HTML attributes and values your input might need
         ]);
 
+        $this->crud->addColumn("Correction"); // add a single column, at the end of the stack
+
+       // $this->crud->setColumnDetails('choice_id', [
+       //     // 1-n relationship
+       //     'label' => "Choice reponse", // Table column heading
+       //     'type' => "select",
+       //     'name' => 'choice_id', // the column that contains the ID of that connected entity;
+       //     'entity' => 'choice', // the method that defines the relationship in your Model
+       //     'attribute' => "label", // foreign key attribute that is shown to user
+       //     'model' => "App\Models\Choice", // foreign key model
+       //  ]);
+
+       // $this->crud->setColumnDetails('survey_id', [
+       //     // 1-n relationship
+       //     'label' => "Questionnaire", // Table column heading
+       //     'type' => "select",
+       //     'name' => 'survey_id', // the column that contains the ID of that connected entity;
+       //     'entity' => 'survey', // the method that defines the relationship in your Model
+       //     'attribute' => "labelle", // foreign key attribute that is shown to user
+       //     'model' => "App\Models\Questionnaire", // foreign key model
+       //  ]);
+       //  $this->crud->setColumnDetails('examen_id', [
+       //     // 1-n relationship
+       //     'label' => "Examen", // Table column heading
+       //     'type' => "select",
+       //     'name' => 'examen_id', // the column that contains the ID of that connected entity;
+       //     'entity' => 'examen', // the method that defines the relationship in your Model
+       //     'attribute' => "label", // foreign key attribute that is shown to user
+       //     'model' => "App\Models\Examen", // foreign key model
+       //  ]);
+
+       // $this->crud->setColumnDetails('user_id', [
+       //     // 1-n relationship
+       //     'label' => "User", // Table column heading
+       //     'type' => "related.text",
+       //     'name' => 'user_id', // the column that contains the ID of that connected entity;
+       //     'entity' => 'user', // the method that defines the relationship in your Model
+       //     'attribute' => "name", // foreign key attribute that is shown to user
+       //     'model' => "App\Models\User", // foreign key model
+       //  ]);
+        $this->crud->setColumnDetails('question_id', [
+           'label' => "Question", // Table column heading
+           'type' => "model_function_attribute",
+           "function_name" =>'getQuestionLabel',
+           'attribute'=>'label',
+        ]);
+
+        $this->crud->setColumnDetails('user_id', [
+           'label' => "Etudiant", // Table column heading
+           'type' => "model_function_attribute",
+           "function_name" =>'getUserName',
+           'attribute'=>'name',
+        ]);
+
+        $this->crud->setColumnDetails('examen_id', [
+           'label' => "Examen", // Table column heading
+           'type' => "model_function_attribute",
+           "function_name" =>'getExamenLabel',
+           'attribute'=>'label',
+        ]);
+
+        $this->crud->setColumnDetails('survey_id', [
+           'label' => "Survey", // Table column heading
+           'type' => "model_function_attribute",
+           "function_name" =>'getSurveyLabel',
+           'attribute'=>'labelle',
+        ]);
+
+        $this->crud->setColumnDetails('choice_id', [
+           'label' => "Reponse attendue", // Table column heading
+           'type' => "model_function_attribute",
+           "function_name" =>'getChoiceLabel',
+           'attribute'=>'response',
+        ]);
+
+        $this->crud->setColumnDetails('answer_value', [
+           'label' => "Reponse de l'étudiant", // Table column heading
+        ]);
+
+        $this->crud->setColumnDetails('Correction', [
+           'label' => "Correction", // Table column heading
+           'type' => "model_function",
+           "function_name" =>'getCorrection',
+        ]);
 
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');

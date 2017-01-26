@@ -16,6 +16,7 @@
 		 	}
 		 	echo '<div class="col-md-4">';
 		 	echo '<a href="/intra/candidat/'.Auth::user()->id.'/examen/'. $value->id .'"><button class="btn btn-primary">'.$value->label.'</button></a>';
+		 	echo '<p>Description</p>'
 		 	echo'</div>';
 		 	$i++;
 		 	if ($i==3){
