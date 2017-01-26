@@ -72,6 +72,10 @@ class User extends Model
     {
         return $this->hasOne('App\Models\Groupchat');
     }
+    public function useranswer()
+    {
+        return $this->hasOne('App\Models\UserAnswer');
+    }
 
     /*
 	|--------------------------------------------------------------------------

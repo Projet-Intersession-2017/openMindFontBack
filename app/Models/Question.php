@@ -56,6 +56,12 @@ class Question extends Model
         return $this->hasMany('App\Models\Choice');
     }
 
+    public function useranswer()
+    {
+        return $this->hasOne('App\Models\UserAnswer');
+    }
+
+
     /*
 	|--------------------------------------------------------------------------
 	| SCOPES

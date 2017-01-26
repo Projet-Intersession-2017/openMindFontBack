@@ -65,11 +65,11 @@
                 $(obj).closest('div').find('.TypeCheckbox').each(function() {
                     if ($(this).is(":checked")){
                     	tabQuestion.push(idQuestion);
-                        reponseC = $(this).next('span').text();
+                        reponseC = 'true';
                         tabReponse.push(reponseC);
                     }else{
                     	tabQuestion.push(idQuestion);
-                    	reponseC = '""';
+                    	reponseC = 'false';
                     	tabReponse.push(reponseC);
                     }
                 });

@@ -62,7 +62,10 @@ class Examen extends Model
     {
         return $this->belongsToMany('App\Models\Group', 'examen_group');
     }
-
+    public function useranswer()
+    {
+        return $this->hasOne('App\Models\UserAnswer');
+    }
 
     /*
 	|--------------------------------------------------------------------------

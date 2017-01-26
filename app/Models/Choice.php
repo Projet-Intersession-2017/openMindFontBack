@@ -38,7 +38,10 @@ class Choice extends Model
     {
         return $this->belongsTo('App\Models\Question');
     }
-
+    public function useranswer()
+    {
+        return $this->hasOne('App\Models\UserAnswer');
+    }
 
     /*
 	|--------------------------------------------------------------------------
