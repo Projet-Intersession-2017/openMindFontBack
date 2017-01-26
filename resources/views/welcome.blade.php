@@ -33,6 +33,7 @@
 					<div class="col-md-5" >
 					    <ul class="nav navbar-nav blocMenu">
 					        <li><a href="contact" class="champsMenu" >Nous contacter</a></li>
+					        <li><a href="cgu" class="champsMenu" >CGU</a></li>
 					        <li><a href="intra/login" class="champsMenu" >Se connecter</a></li>
 				            <!--<li><a href="intra/register" class="champsMenu">S'inscrire</a></li>-->
 				          </ul>
