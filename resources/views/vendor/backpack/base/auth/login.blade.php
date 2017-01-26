@@ -15,8 +15,14 @@
                             <label class="col-md-4 control-label">{{ trans('backpack::base.email_address') }}</label>
 
                             <div class="col-md-6">
-                                <input type="email" class="form-control" name="email" value="{{ old('email') }}">
-
+                                <div class="input-group">
+                                    <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-envelope">
+                                            
+                                        </span>
+                                    </span>
+                                </div>
                                 @if ($errors->has('email'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -29,8 +35,12 @@
                             <label class="col-md-4 control-label">{{ trans('backpack::base.password') }}</label>
 
                             <div class="col-md-6">
-                                <input type="password" class="form-control" name="password">
-
+                                <div class="input-group">
+                                    <input type="password" class="form-control" name="password">
+                                    <span class="input-group-addon">
+                                       <i class="fa fa-key" aria-hidden="true"></i> 
+                                    </span>
+                                </div>
                                 @if ($errors->has('password'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>

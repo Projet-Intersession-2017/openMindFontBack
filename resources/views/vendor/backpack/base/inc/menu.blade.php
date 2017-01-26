@@ -12,7 +12,7 @@
 
 
 <div class="navbar-custom-menu">
-    <ul class="nav navbar-nav">
+    <ul class="nav navbar-nav" >
       <!-- ========================================================= -->
       <!-- ========== Top menu right items (ordered left) ========== -->
       <!-- ========================================================= -->
