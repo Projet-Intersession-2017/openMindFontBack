@@ -119,3 +119,26 @@ http://192.168.1.198/index.php
             </IfModule>
     </Directory>
 ```
+
+
+#### Bug with PHP7 with elfinder
+
+
+```
+On my local vagrant box
+PHP 7.0.8-2+deb.sury.org~xenial+1
+This works
+
+    'route' => [
+        'prefix'     => config('backpack.base.route_prefix').'/elfinder',
+        'middleware' => ['web', 'auth'], //Set to null to disable middleware filter
+    ],
+On my live server
+PHP 7.1.0-5+deb.sury.org~xenial+1
+I had to change it to this to get the routes to work
+
+    'route' => [
+        'prefix'     => 'admin/elfinder',
+        'middleware' => ['web', 'auth'], //Set to null to disable middleware filter
+    ],
+```
