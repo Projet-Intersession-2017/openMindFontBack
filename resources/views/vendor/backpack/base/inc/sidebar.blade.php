@@ -99,10 +99,11 @@
             - AUCUN ROLE : voir avec l'administrateur -
           @endif
             <li class="treeview">
-                <a href="#"><i class="fa fa-weixin"></i><span>NoteBook</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class="fa fa-weixin"></i><span>Notebook & Cours</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href="{{ url('intra/notebook') }}"><i class="fa fa-circle-o"></i> <span>Notebooks</span></a></li>
                     <li><a href="{{ url('intra/note') }}"><i class="fa fa-circle-o"></i> <span>Notes</span></a></li>
+                    <li><a href="{{ url('intra/cour') }}"><i class="fa fa-circle-o"></i> <span>Cours</span></a></li>
                 </ul>
             </li>
             <li>

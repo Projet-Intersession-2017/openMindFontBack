@@ -73,6 +73,15 @@ class User extends Model
         return $this->hasOne('App\Models\Groupchat');
     }
 
+    public function cours()
+    {
+        return $this->hasMany('App\Models\Cour');
+    }
+
+
+
+
+
     /*
 	|--------------------------------------------------------------------------
 	| SCOPES

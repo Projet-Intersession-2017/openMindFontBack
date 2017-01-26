@@ -10,7 +10,7 @@ return [
     | The dir where to store the images (relative from public)
     |
     */
-    'dir' => ['uploads'],
+    'dir' => ['cours', 'files'],
 
     /*
     |--------------------------------------------------------------------------
@@ -65,7 +65,7 @@ return [
     */
 
     'roots' => null,
-
+    'locale' => 'fr_FR',
     /*
     |--------------------------------------------------------------------------
     | Options

@@ -5,38 +5,38 @@ namespace App\Http\Controllers\Admin;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\NoteBookRequest as StoreRequest;
-use App\Http\Requests\NoteBookRequest as UpdateRequest;
+use App\Http\Requests\CourRequest as StoreRequest;
+use App\Http\Requests\CourRequest as UpdateRequest;
 use Illuminate\Support\Facades\Auth;
 
-class NoteBookCrudController extends CrudController
+class CourCrudController extends CrudController
 {
 
-    
+
     public function setUp()
     {
         $this->user_id = Auth::user()->id;
 
+        /*
+		|--------------------------------------------------------------------------
+		| BASIC CRUD INFORMATION
+		|--------------------------------------------------------------------------
+		*/
+        $this->crud->setModel("App\Models\Cour");
+        $this->crud->setRoute("intra/cour");
+        $this->crud->setEntityNameStrings('cour', 'cours');
 
         /*
 		|--------------------------------------------------------------------------
 		| BASIC CRUD INFORMATION
 		|--------------------------------------------------------------------------
 		*/
-        $this->crud->setModel("App\Models\NoteBook");
-        $this->crud->setRoute("intra/notebook");
-        $this->crud->setEntityNameStrings('Notebook', 'Notebooks');
 
-        /*
-		|--------------------------------------------------------------------------
-		| BASIC CRUD INFORMATION
-		|--------------------------------------------------------------------------
-		*/
+
 
         $this->crud->setFromDb();
 
-
-        $this->crud->addField(
+              $this->crud->addField(
             [       // Select2Multiple = n-n relationship (with pivot table)
                 'label' => "Partagé avec le groupe",
                 'type' => 'select2',
@@ -46,8 +46,7 @@ class NoteBookCrudController extends CrudController
                 'model' => "App\Models\Group", // foreign key model
             ]
         );
-
-        $this->crud->addField(
+            $this->crud->addField(
             [       // Select2Multiple = n-n relationship (with pivot table)
                 'label' => "User",
                 'type' => 'select', // FUCK SELECT2 to allow readonly in order to pass he value to the form
@@ -64,6 +63,15 @@ class NoteBookCrudController extends CrudController
             ]
         );
 
+
+        $this->crud->setColumnDetails('pdf', 
+            [       // Select2Multiple = n-n relationship (with pivot table)
+                'label' => "Lien pdf",
+                'type'  => 'model_function',
+                'function_name' => 'getPdfLink'
+            ]);
+
+
         $this->crud->setColumnDetails('user_id', 
             [       // Select2Multiple = n-n relationship (with pivot table)
                 'label' => "User",
@@ -74,6 +82,8 @@ class NoteBookCrudController extends CrudController
                 'model' => "App\Models\User", // foreign key model
             ]);
 
+
+
         $this->crud->setColumnDetails('group_id',       [       // Select2Multiple = n-n relationship (with pivot table)
                 'label' => "Partagé avec le groupe",
                 'type' => 'select2',
@@ -82,7 +92,6 @@ class NoteBookCrudController extends CrudController
                 'attribute' => 'label', // foreign key attribute that is shown to user
                 'model' => "App\Models\Group", // foreign key model
             ]);
-
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
