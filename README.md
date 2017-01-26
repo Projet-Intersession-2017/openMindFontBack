@@ -107,3 +107,15 @@ http://192.168.1.198/index.php
 ```
 
 ## Upload
+
+## VHost
+```
+    <Directory /var/www/html/PROJECT_FOLDER/public>
+            <IfModule mod_rewrite.c>
+                    RewriteEngine On
+                    RewriteCond %{REQUEST_FILENAME} !-f
+                    RewriteCond %{REQUEST_FILENAME} !-d
+                    RewriteRule ^(.*)$ /index.php/$1 [L]
+            </IfModule>
+    </Directory>
+```
