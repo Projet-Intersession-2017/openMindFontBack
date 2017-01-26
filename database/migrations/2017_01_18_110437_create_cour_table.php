@@ -20,7 +20,8 @@ class CreateCourTable extends Migration
             $table->string('description');
             $table->dateTime('created_at');
             $table->dateTime('updated_at');
-            $table->integer('listecour_id')->unsigned();
+            $table->integer('user_id')->unsigned();
+            $table->integer('group_id')->unsigned()->nullable();
         });
     }
 

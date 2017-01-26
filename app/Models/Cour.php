@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
 
-class Group extends Model
+class Cour extends Model
 {
     use CrudTrait;
 
@@ -15,11 +15,11 @@ class Group extends Model
 	|--------------------------------------------------------------------------
 	*/
 
-    protected $table = 'group';
+    protected $table = 'cour';
     //protected $primaryKey = 'id';
     // public $timestamps = false;
-    // protected $guarded = ['id'];
-    protected $fillable = ['name'];
+    protected $guarded = ['id'];
+    // protected $fillable = [];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -35,39 +35,38 @@ class Group extends Model
 	|--------------------------------------------------------------------------
 	*/
 
-    /**
-     * The users that belong to the role.
-     */
-    public function users()
-    {
-        return $this->hasMany('App\User');
-    }
-
-    /**
-     * The users that belong to the role.
-     */
-    public function cours()
-    {
-        return $this->hasMany('App\Models\Cours');
-    }
-
-
-
-    // public function examens()
-    // {
-    //     return $this->belongsToMany('App\Models\Examen', 'examen_group');
-    // }
     /*
 	|--------------------------------------------------------------------------
 	| SCOPES
 	|--------------------------------------------------------------------------
 	*/
 
+    public function cours()
+    {
+        return $this->belongsTo('App\Models\Cour');
+    }
+
+
+    public function group()
+    {
+        return $this->belongsTo('App\Models\Group');
+    }
+
+
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
+
     /*
 	|--------------------------------------------------------------------------
 	| ACCESORS
 	|--------------------------------------------------------------------------
-	*/
+	*/	
+	public function getPdfLink() {
+        return '<a href="'.url($this->pdf).'" target="_blank">'.$this->label.'</a>';
+    }
 
     /*
 	|--------------------------------------------------------------------------

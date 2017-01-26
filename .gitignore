@@ -6,3 +6,9 @@ Homestead.json
 Homestead.yaml
 .env
 composer.lock
+
+/public/files/*
+/public/cours/*
+
+!/public/files/.gitkeep
+!/public/cours/.gitkeep
