@@ -7,5 +7,5 @@ Homestead.yaml
 .env
 composer.lock
 
-/public/files/*
-/public/cours/*
+/public/files/**/*
+/public/cours/**/*
