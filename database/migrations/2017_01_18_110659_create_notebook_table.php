@@ -20,7 +20,7 @@ class CreateNotebookTable extends Migration
             $table->dateTime('created_at');
             $table->dateTime('updated_at');
             $table->integer('user_id')->unsigned();
-            $table->integer('group_id')->unsigned();
+            $table->integer('group_id')->unsigned()->nullable();
         });
     }
 
