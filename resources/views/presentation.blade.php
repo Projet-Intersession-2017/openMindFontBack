@@ -41,7 +41,7 @@
 		<div class="container">
 			<div class="row">
 				<h2 align="center" style="font-size: 35px; text-decoration: underline;">Plan</h2>
-				<div class="col-sm-6">
+				<div class="col-sm-12">
 					<div>
 						<ul>
 							<li class="paragraphePlan"><a href="#objectif">Objectif</a></li>
@@ -52,16 +52,6 @@
 							<li class="paragraphePlan"><a href="/presentation/remerciements">Remerciements</a></li>
 						</ul>
 					</div>  
-				</div>
-				<div class="col-sm-6">
-					<div>
-						<ul>
-							<li class="paragraphePlan"><a href="/presentation/reseau">Réseau</a></li>
-							<li class="paragraphePlan"><a href="/presentation/front">Front</a></li>
-							<li class="paragraphePlan"><a href="/presentation/back">Back</a></li>
-							<li class="paragraphePlan"><a href="/presentation/projet">Projet</a></li>
-						</ul>
-					</div> 
 				</div>
 			</div>  
 		</div>
@@ -90,7 +80,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 col-md-12">
-					<h2 align="center" style="font-size: 35px; text-decoration: underline;">Gestion de Projet</h2>
+					<a href="/presentation/projet"><h2 align="center" style="font-size: 35px; text-decoration: underline;">Gestion de Projet</h2></a>
 					<div class="paragraphePlan" align="center">
                    		Outils utilisées
                        	<div class="row">
@@ -106,7 +96,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 col-md-12">
-					<h2 align="center" style="font-size: 35px; text-decoration: underline;">Infrastructure</h2>
+					<a href="/presentation/reseau"><h2 align="center" style="font-size: 35px; text-decoration: underline;">Infrastructure</h2></a>
 					<div class="paragraphePlan" align="center">
                    		Technologies utilisées
                        	<div class="row">
@@ -136,6 +126,15 @@
 	                       		<div class="col-md-2"><img src="/img/bootstrap.png" alt="Logo bootstrap"></div>
 	                       		<div class="col-md-2"><img src="/img/github.png" alt="Logo github"></div>
 	                       	</div>
+	                       	<div class="imageMarge">
+	                       		<div class="col-md-6">
+	                       			<a href="/presentation/front"><button>Le Front</button></a>
+	                       		</div>
+	                       		<div class="col-md-6">
+	                       			<a href="/presentation/back"><button>Le Back</button></a>
+	                       		</div>
+	                       	</div>
+	                       	<br>
 	                       	<div class="imageMarge">
 	                       	Présentation de l'application
 	                       	</div>
