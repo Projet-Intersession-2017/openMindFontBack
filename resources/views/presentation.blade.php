@@ -49,6 +49,7 @@
 							<li class="paragraphePlan"><a href="#application">L'application OpenMind</a></li>
 							<li class="paragraphePlan"><a href="#evolutions">Les possibilités d'évolutions</a></li>
 							<li class="paragraphePlan"><a href="#conclusion">Conclusion</a></li>
+							<li class="paragraphePlan"><a href="/presentation/remerciements">Remerciements</a></li>
 						</ul>
 					</div>  
 				</div>
