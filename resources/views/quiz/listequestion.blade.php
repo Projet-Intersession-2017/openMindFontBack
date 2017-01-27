@@ -17,7 +17,7 @@
     	var tabIdChoice=[];
         $( document ).ready(function() {
             $('.question').hide();
-            $('#tabs-1').show();
+            $('#tabs').children().eq(0).show();
             $('.TypeCheckbox').prop("checked", false);
             $('.btnSuivant').click(function() {
                 stockerReponse(this);
