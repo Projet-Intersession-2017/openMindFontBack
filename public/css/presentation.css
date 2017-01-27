@@ -967,3 +967,11 @@ figure.effect-bubba:hover p {
 
 }
 
+
+.PresentationMerci{
+background: rgb(239,159,105); /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  rgba(239,159,105,1) 0%, rgba(228,115,28,1) 76%, rgba(228,115,28,1) 76%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(239,159,105,1) 0%,rgba(228,115,28,1) 76%,rgba(228,115,28,1) 76%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center,  rgba(239,159,105,1) 0%,rgba(228,115,28,1) 76%,rgba(228,115,28,1) 76%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ef9f69', endColorstr='#e4731c',GradientType=1 )
+}

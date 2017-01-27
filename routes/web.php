@@ -23,7 +23,21 @@ Route::get('/cgu', function () {
 Route::get('/presentation', function () {
     return view('presentation');
 });
-
+Route::get('/presentation/reseau', function () {
+    return view('reseau');
+});
+Route::get('/presentation/front', function () {
+    return view('front');
+});
+Route::get('/presentation/back', function () {
+    return view('back');
+});
+Route::get('/presentation/projet', function () {
+    return view('projet');
+});
+Route::get('/presentation/remerciements', function () {
+    return view('remerciements');
+});
 /**********Routes pour les examens des étudiants *************/
 Route::get('/intra/listeexamen', [
 	'middleware' => ['auth' /*, 'roles'*/], // A 'roles' middleware must be specified
