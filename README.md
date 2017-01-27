@@ -1,3 +1,7 @@
+# IP
+
+34.249.163.43
+
 # openMindFontBack
 laravel font back office
 
@@ -108,7 +112,6 @@ http://192.168.1.198/index.php
 
 ## Upload
 
-
 ## Présentation projet
 
 ```
@@ -118,3 +121,37 @@ http://localhost:8000/presentation
 
 ## Présentation power point  est fourni aussi 
 
+## VHost
+```
+    <Directory /var/www/html/PROJECT_FOLDER/public>
+            <IfModule mod_rewrite.c>
+                    RewriteEngine On
+                    RewriteCond %{REQUEST_FILENAME} !-f
+                    RewriteCond %{REQUEST_FILENAME} !-d
+                    RewriteRule ^(.*)$ /index.php/$1 [L]
+            </IfModule>
+    </Directory>
+```
+
+
+#### Bug with PHP7 with elfinder
+
+
+```
+On my local vagrant box
+PHP 7.0.8-2+deb.sury.org~xenial+1
+This works
+
+    'route' => [
+        'prefix'     => config('backpack.base.route_prefix').'/elfinder',
+        'middleware' => ['web', 'auth'], //Set to null to disable middleware filter
+    ],
+On my live server
+PHP 7.1.0-5+deb.sury.org~xenial+1
+I had to change it to this to get the routes to work
+
+    'route' => [
+        'prefix'     => 'admin/elfinder',
+        'middleware' => ['web', 'auth'], //Set to null to disable middleware filter
+    ],
+```
