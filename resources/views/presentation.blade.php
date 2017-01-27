@@ -40,8 +40,8 @@
 	<section id="sommaire" class="pfblock paragrapheMarge">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-12">
-					<h2 align="center">Plan</h2>
+				<h2 align="center" style="font-size: 35px; text-decoration: underline;">Plan</h2>
+				<div class="col-sm-6">
 					<div>
 						<ul>
 							<li class="paragraphePlan"><a href="#objectif">Objectif</a></li>
@@ -52,6 +52,16 @@
 						</ul>
 					</div>  
 				</div>
+				<div class="col-sm-6">
+					<div>
+						<ul>
+							<li class="paragraphePlan"><a href="/presentation/reseau">Réseau</a></li>
+							<li class="paragraphePlan"><a href="/presentation/front">Front</a></li>
+							<li class="paragraphePlan"><a href="/presentation/back">Back</a></li>
+							<li class="paragraphePlan"><a href="/presentation/projet">Projet</a></li>
+						</ul>
+					</div> 
+				</div>
 			</div>  
 		</div>
 	</section>  
@@ -59,7 +69,7 @@
 			<div class="container">  
 				<div class="row"> 
                     <div class="col-sm-12">  
-                        <h2  align="center">Objectif</h2>
+                        <h2  align="center" style="font-size: 35px; text-decoration: underline;">Objectif</h2>
                         <div>
                        		<li class="paragrapheObjectif">
                        			Proposer une solution innovante et facile d'utilisation permettant d'aider l'étudiant(e) tout au long de sa scolarité.
@@ -75,11 +85,27 @@
                 </div>
 			</div> 
     </section>
-	<section id="infrastructure" class="pfblock">
+    <section id="projet" class="pfblock">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 col-md-12">
-					<h2 align="center">Infrastructure</h2>
+					<h2 align="center" style="font-size: 35px; text-decoration: underline;">Gestion de Projet</h2>
+					<div class="paragraphePlan" align="center">
+                   		Outils utilisées
+                       	<div class="row">
+                       		<div class="col-md-2 col-md-offset-3"><img src="/img/drive.png" alt="Logo Google Drive"></div>
+                       		<div class="col-md-2"><img src="/img/gantter.png" alt="Logo Gantter"></div>
+                       		<div class="col-md-2"><img src="/img/excel.png" alt="Logo Excel"></div>
+                    </div>
+				</div>
+			</div>  
+		</div>
+	</section> 
+	<section id="infrastructure" class="pfblock pfblock-gray">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-12">
+					<h2 align="center" style="font-size: 35px; text-decoration: underline;">Infrastructure</h2>
 					<div class="paragraphePlan" align="center">
                    		Technologies utilisées
                        	<div class="row">
@@ -90,19 +116,16 @@
                        		<div class="col-md-2"><img src="/img/heartBeat.png" alt="Logo bootstrap"></div>
                        		<div class="col-md-2"><img src="/img/rsync.png" alt="Logo github"></div>
                        	</div>
-                    </div> 
-                    <div class="col-sm-12 col-md-12 imageMarge" align="center">
-                    	<img src="/img/Infrastructure.PNG" alt="Infrastructure">
                     </div>
 				</div>
 			</div>  
 		</div>
 	</section>  
-    <section class="pfblock pfblock-gray" id="application"> 
+    <section class="pfblock pfblock" id="application"> 
 			<div class="container">  
 				<div class="row"> 
                     <div class="col-sm-12">  
-                        <h2  align="center">L'application OpenMind</h2>
+                        <h2  align="center" style="font-size: 35px; text-decoration: underline;">L'application OpenMind</h2>
                         <div class="paragraphePlan" align="center">
                        		Technologies utilisées
 	                       	<div class="row">
@@ -119,18 +142,17 @@
 	                       		<div class="col-md-12">
 	                       			<a href="/" target="_bank"><button>OpenMind</button></a>
 	                       		</div>
-	                       		
 	                       	</div>
                         </div> 
                     </div>
                 </div>
 			</div> 
     </section>
-    <section id="evolutions" class="pfblock">
+    <section id="evolutions" class="pfblock pfblock-gray">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
-					<h2 align="center">Evolutions</h2>
+					<h2 align="center" style="font-size: 35px; text-decoration: underline;">Evolutions</h2>
 					<div class="paragraphePlan">
                        	<li class="paragrapheEvolutions paragrapheMarge">
                    			Relevé des présences
@@ -152,13 +174,13 @@
 			</div>  
 		</div>
 	</section>
-	<section class="pfblock pfblock-gray" id="conclusion"> 
+	<section class="pfblock pfblock" id="conclusion"> 
 			<div class="container">  
 				<div class="row"> 
                     <div class="col-sm-12">  
-                        <h2  align="center">Conclusion</h2>
-                        <div class="paragraphePlan">
-                       	
+                        <h2  align="center" style="font-size: 35px; text-decoration: underline;">Conclusion</h2>
+                        <div class="paragraphePlan" style="text-align:center">
+                       		L’application répond aux besoins du client. Concernant le questionnaire et le partage des cours avec les élèves, les futurs améliorations pour la version suivante seront un échange de messages instantanées entre les étudiants et les tuteurs lors d’un cours, la gestion des présence des élèves connectés. De plus, le partage avec écran blanc permettra une interactivité du cours.
                         </div> 
                     </div>
                 </div>

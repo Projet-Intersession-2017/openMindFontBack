@@ -112,6 +112,15 @@ http://192.168.1.198/index.php
 
 ## Upload
 
+## Présentation projet
+
+```
+http://localhost:8000/presentation
+
+```
+
+## Présentation power point  est fourni aussi 
+
 ## VHost
 ```
     <Directory /var/www/html/PROJECT_FOLDER/public>

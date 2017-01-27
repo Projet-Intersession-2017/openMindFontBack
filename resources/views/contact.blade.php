@@ -37,7 +37,7 @@
                 </div>
                 <div class="col-md-12">
                     <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
-                        Send Message</button>
+                        Envoyer</button>
                 </div>
             </div>
             </form>

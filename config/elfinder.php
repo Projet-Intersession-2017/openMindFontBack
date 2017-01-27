@@ -41,7 +41,7 @@ return [
     'route' => [
         // BUG PHP 7.0.XX
         // 'prefix'     => config('backpack.base.route_prefix').'/elfinder',
-        'prefix'     '/intra/elfinder',
+        'prefix'     => '/intra/elfinder',
         'middleware' => ['web', 'auth'], //Set to null to disable middleware filter
     ],
 
