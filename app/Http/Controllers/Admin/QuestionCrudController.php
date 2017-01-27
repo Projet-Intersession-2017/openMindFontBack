@@ -51,14 +51,7 @@ class QuestionCrudController extends CrudController
         ]);
 
 
-        $this->crud->addField([
-            'label' => 'Choices',
-            'type' => 'choices',
-            'name' => 'choice_id', // the db column for the foreign key
-            'entity' => 'type', // the method that defines the relationship in your Model
-            'attribute' => 'label', // foreign key attribute that is shown to user
-            'model' => 'App\Models\Type' // foreign key model
-        ]);
+
 
 
        $this->crud->setColumnDetails('survey_id', [
